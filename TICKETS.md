@@ -23,12 +23,10 @@ The only client memory write is the same two-byte status-icon-row hide that the
 approved statustimers addon uses (same signature, credited, GPL). It is
 optional (`/cdtimers native`) and restored on unload.
 
-The addon writes one text file, `config\cdchime_speech.txt`. An optional
-program that runs outside Ashita (`tts_daemon.py`, started by
-`CdchimeVoice.bat`) reads that file and synthesises the phrase text with
-Microsoft's Edge text-to-speech service, caching mp3s locally. Only the phrase
-text (ability and NM names, reminder text) is sent; no character, chat or log
-data. The addon itself makes no network calls.
+Spoken reminders are pre-recorded mp3 clips shipped in the addon's `voice`
+folder, played through winmm's MCI call from inside the addon (the same
+library other approved overlays use for sounds). The addon writes no files
+other than its own settings and makes no network calls.
 
 ## HeaphTimers (folder `heaphtimers`)
 

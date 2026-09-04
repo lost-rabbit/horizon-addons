@@ -1,0 +1,3318 @@
+0 percent
+1 percent
+10 percent
+100 percent
+11 percent
+12 percent
+13 percent
+14 percent
+15 percent
+16 percent
+17 percent
+18 percent
+19 percent
+2 percent
+20 percent
+21 percent
+22 percent
+23 percent
+24 percent
+25 percent
+26 percent
+27 percent
+28 percent
+29 percent
+3 percent
+30 percent
+31 percent
+32 percent
+33 percent
+34 percent
+35 percent
+36 percent
+37 percent
+38 percent
+39 percent
+4 percent
+40 percent
+41 percent
+42 percent
+43 percent
+44 percent
+45 percent
+46 percent
+47 percent
+48 percent
+49 percent
+5 percent
+50 percent
+51 percent
+52 percent
+53 percent
+54 percent
+55 percent
+56 percent
+57 percent
+58 percent
+59 percent
+6 percent
+60 percent
+61 percent
+62 percent
+63 percent
+64 percent
+65 percent
+66 percent
+67 percent
+68 percent
+69 percent
+7 percent
+70 percent
+71 percent
+72 percent
+73 percent
+74 percent
+75 percent
+76 percent
+77 percent
+78 percent
+79 percent
+8 percent
+80 percent
+81 percent
+82 percent
+83 percent
+84 percent
+85 percent
+86 percent
+87 percent
+88 percent
+89 percent
+9 percent
+90 percent
+91 percent
+92 percent
+93 percent
+94 percent
+95 percent
+96 percent
+97 percent
+98 percent
+99 percent
+Absolute Virtue up
+Absolute Virtue window open
+Accession
+Accession is down
+Accession ready
+Accession used
+Accomplice
+Accomplice is down
+Accomplice ready
+Accomplice used
+Acid Mist
+Acid Mist is down
+Acid Mist ready
+Acid Mist used
+Acid Spray
+Acid Spray is down
+Acid Spray ready
+Acid Spray used
+Activate
+Activate is down
+Activate ready
+Activate used
+Adamantoise up
+Adamantoise window open
+Addendum Black
+Addendum Black is down
+Addendum Black ready
+Addendum Black used
+Addendum White
+Addendum White is down
+Addendum White ready
+Addendum White used
+Aerial Armor
+Aerial Armor is down
+Aerial Armor ready
+Aerial Armor used
+Aerial Blast
+Aerial Blast is down
+Aerial Blast ready
+Aerial Blast used
+Aero Ii
+Aero Ii is down
+Aero Ii ready
+Aero Ii used
+Aero Iv
+Aero Iv is down
+Aero Iv ready
+Aero Iv used
+Afflatus Misery
+Afflatus Misery is down
+Afflatus Misery ready
+Afflatus Misery used
+Afflatus Solace
+Afflatus Solace is down
+Afflatus Solace ready
+Afflatus Solace used
+Aggressor
+Aggressor is down
+Aggressor ready
+Aggressor used
+Ahtu up
+Ahtu window open
+Aiatar up
+Aiatar window open
+Aipaloovik up
+Aipaloovik window open
+Alacrity
+Alacrity is down
+Alacrity ready
+Alacrity used
+Alastor Antlion up
+Alastor Antlion window open
+Alkyoneus up
+Alkyoneus window open
+Allies Roll
+Allies Roll is down
+Allies Roll ready
+Allies Roll used
+Altana S Favor
+Altana S Favor is down
+Altana S Favor ready
+Altana S Favor used
+Altruism
+Altruism is down
+Altruism ready
+Altruism used
+Ambusher Antlion up
+Ambusher Antlion window open
+Amemet up
+Amemet window open
+Amikiri up
+Amikiri window open
+Ancient Circle
+Ancient Circle is down
+Ancient Circle ready
+Ancient Circle used
+Ancient Goobbue up
+Ancient Goobbue window open
+Angon
+Angon is down
+Angon ready
+Angon used
+Animated Flourish
+Animated Flourish is down
+Animated Flourish ready
+Animated Flourish used
+Antican Consul up
+Antican Consul window open
+Antican Legatus up
+Antican Legatus window open
+Antican Magister up
+Antican Magister window open
+Antican Praefectus up
+Antican Praefectus window open
+Antican Proconsul up
+Antican Proconsul window open
+Antican Tribunus up
+Antican Tribunus window open
+Apogee
+Apogee is down
+Apogee ready
+Apogee used
+Aqua Breath
+Aqua Breath is down
+Aqua Breath ready
+Aqua Breath used
+Aquarius up
+Aquarius window open
+Arachne up
+Arachne window open
+Arcane Circle
+Arcane Circle is down
+Arcane Circle ready
+Arcane Circle used
+Arcane Crest
+Arcane Crest is down
+Arcane Crest ready
+Arcane Crest used
+Argus up
+Argus window open
+Arioch up
+Arioch window open
+Aroma Crawler up
+Aroma Crawler window open
+Aroma Fly up
+Aroma Fly window open
+Aroma Leech up
+Aroma Leech window open
+Ash Dragon up
+Ash Dragon window open
+Ashmaker Gotblut up
+Ashmaker Gotblut window open
+Asphyxiated Amsel up
+Asphyxiated Amsel window open
+Aspidochelone up
+Aspidochelone window open
+Aspir Samba
+Aspir Samba Ii
+Aspir Samba Ii is down
+Aspir Samba Ii ready
+Aspir Samba Ii used
+Aspir Samba is down
+Aspir Samba ready
+Aspir Samba used
+Assassins Charge
+Assassins Charge is down
+Assassins Charge ready
+Assassins Charge used
+Assault
+Assault is down
+Assault ready
+Assault used
+Astral Conduit
+Astral Conduit is down
+Astral Conduit ready
+Astral Conduit used
+Astral Flow
+Astral Flow is down
+Astral Flow ready
+Astral Flow used
+Asylum
+Asylum is down
+Asylum ready
+Asylum used
+Avatars Favor
+Avatars Favor is down
+Avatars Favor ready
+Avatars Favor used
+Avengers Roll
+Avengers Roll is down
+Avengers Roll ready
+Avengers Roll used
+Awd Goggie up
+Awd Goggie window open
+Axe Kick
+Axe Kick is down
+Axe Kick ready
+Axe Kick used
+Azure Lore
+Azure Lore is down
+Azure Lore ready
+Azure Lore used
+Back Heel
+Back Heel is down
+Back Heel ready
+Back Heel used
+Balor up
+Balor window open
+Baobhan Sith up
+Baobhan Sith window open
+Baron Vapula up
+Baron Vapula window open
+Baronet Romwe up
+Baronet Romwe window open
+Barracuda Dive
+Barracuda Dive is down
+Barracuda Dive ready
+Barracuda Dive used
+Barrage
+Barrage is down
+Barrage ready
+Barrage used
+Bat Eye up
+Bat Eye window open
+Battuta
+Battuta is down
+Battuta ready
+Battuta used
+Beak Lunge
+Beak Lunge is down
+Beak Lunge ready
+Beak Lunge used
+Beast Roll
+Beast Roll is down
+Beast Roll ready
+Beast Roll used
+Behemoth up
+Behemoth window open
+Bendigeit Vran up
+Bendigeit Vran window open
+Benediction
+Benediction is down
+Benediction ready
+Benediction used
+Berserk
+Berserk Ready
+Berserk is down
+Berserk ready
+Berserk used
+Beryl-Footed Molberry up
+Beryl-Footed Molberry window open
+Bestial Loyalty
+Bestial Loyalty is down
+Bestial Loyalty ready
+Bestial Loyalty used
+Biast up
+Biast window open
+Big Bomb up
+Big Bomb window open
+Big Scissors
+Big Scissors is down
+Big Scissors ready
+Big Scissors used
+Bigmouth Billy up
+Bigmouth Billy window open
+Bisque-Heeled Sunberry up
+Bisque-Heeled Sunberry window open
+Bistre-Hearted Malberry up
+Bistre-Hearted Malberry window open
+Bitter Elegy
+Bitter Elegy is down
+Bitter Elegy ready
+Bitter Elegy used
+Black Coney up
+Black Coney window open
+Black Triple Stars up
+Black Triple Stars window open
+Blackbeard up
+Blackbeard window open
+Blade Bash
+Blade Bash is down
+Blade Bash ready
+Blade Bash used
+Blaster
+Blaster is down
+Blaster ready
+Blaster used
+Blaze of Glory
+Blaze of Glory is down
+Blaze of Glory ready
+Blaze of Glory used
+Blindside
+Blindside is down
+Blindside ready
+Blindside used
+Blitzers Roll
+Blitzers Roll is down
+Blitzers Roll ready
+Blitzers Roll used
+Blizzard Ii
+Blizzard Ii is down
+Blizzard Ii ready
+Blizzard Ii used
+Blizzard Iv
+Blizzard Iv is down
+Blizzard Iv ready
+Blizzard Iv used
+Blockhead
+Blockhead is down
+Blockhead ready
+Blockhead used
+Blood Pact Rage
+Blood Pact Rage is down
+Blood Pact Rage ready
+Blood Pact Rage used
+Blood Pact Ward
+Blood Pact Ward is down
+Blood Pact Ward ready
+Blood Pact Ward used
+Blood Rage
+Blood Rage is down
+Blood Rage ready
+Blood Rage used
+Blood Weapon
+Blood Weapon is down
+Blood Weapon ready
+Blood Weapon used
+Bloodpool Vorax up
+Bloodpool Vorax window open
+Bloodsucker up
+Bloodsucker window open
+Bloodtear Baldurf up
+Bloodtear Baldurf window open
+Bloodthirster Madkix up
+Bloodthirster Madkix window open
+Bloody Bones up
+Bloody Bones window open
+Bloody Vrukwuk up
+Bloody Vrukwuk window open
+Blubbery Bulge up
+Blubbery Bulge window open
+Bluestreak Gyugyuroon up
+Bluestreak Gyugyuroon window open
+Bolster
+Bolster is down
+Bolster ready
+Bolster used
+Bolters Roll
+Bolters Roll is down
+Bolters Roll ready
+Bolters Roll used
+Bomb King up
+Bomb King window open
+Bomb Queen up
+Bomb Queen window open
+Bonnacon up
+Bonnacon window open
+Boost
+Boost is down
+Boost ready
+Boost used
+Boroka up
+Boroka window open
+Bounty Shot
+Bounty Shot is down
+Bounty Shot ready
+Bounty Shot used
+Box Step
+Box Step is down
+Box Step ready
+Box Step used
+Brain Crush
+Brain Crush is down
+Brain Crush ready
+Brain Crush used
+Brazen Rush
+Brazen Rush is down
+Brazen Rush ready
+Brazen Rush used
+Brigandish Blade up
+Brigandish Blade window open
+Bright-Handed Kunberry up
+Bright-Handed Kunberry window open
+Bubble Curtain
+Bubble Curtain is down
+Bubble Curtain ready
+Bubble Curtain used
+Bubble Shower
+Bubble Shower is down
+Bubble Shower ready
+Bubble Shower used
+Bubbly Bernie up
+Bubbly Bernie window open
+Buburimboo up
+Buburimboo window open
+Bugbear Matman up
+Bugbear Matman window open
+Bugbear Strongman up
+Bugbear Strongman window open
+Building Flourish
+Building Flourish is down
+Building Flourish ready
+Building Flourish used
+Bully
+Bully is down
+Bully ready
+Bully used
+Bune up
+Bune window open
+Burned Bergmann up
+Burned Bergmann window open
+Burning Strike
+Burning Strike is down
+Burning Strike ready
+Burning Strike used
+Burst Affinity
+Burst Affinity is down
+Burst Affinity ready
+Burst Affinity used
+Byakko up
+Byakko window open
+Cacodemonia
+Cacodemonia is down
+Cacodemonia ready
+Cacodemonia used
+Cactrot Rapido up
+Cactrot Rapido window open
+Cactuar Cantautor up
+Cactuar Cantautor window open
+Caithleann up
+Caithleann window open
+Call Beast
+Call Beast is down
+Call Beast ready
+Call Beast used
+Call Wyvern
+Call Wyvern is down
+Call Wyvern ready
+Call Wyvern used
+Camisado
+Camisado is down
+Camisado ready
+Camisado used
+Camouflage
+Camouflage is down
+Camouflage ready
+Camouflage used
+Cancer up
+Cancer window open
+Caper Emissarius
+Caper Emissarius is down
+Caper Emissarius ready
+Caper Emissarius used
+Capricious Cassie up
+Capricious Cassie window open
+Cargo Crab Colin up
+Cargo Crab Colin window open
+Carmine Dobsonfly up
+Carmine Dobsonfly window open
+Carmine-Tailed Janberry up
+Carmine-Tailed Janberry window open
+Carnero up
+Carnero window open
+Cascade
+Cascade is down
+Cascade ready
+Cascade used
+Casters Roll
+Casters Roll is down
+Casters Roll ready
+Casters Roll used
+Celerity
+Celerity is down
+Celerity ready
+Celerity used
+Celeste-Eyed Tozberry up
+Celeste-Eyed Tozberry window open
+Celphie up
+Celphie window open
+Cemetery Cherry up
+Cemetery Cherry window open
+Centurio X-I up
+Centurio X-I window open
+Centurio Xii-I up
+Centurio Xii-I window open
+Cerberus up
+Cerberus window open
+Chain Affinity
+Chain Affinity is down
+Chain Affinity ready
+Chain Affinity used
+Chainspell
+Chainspell is down
+Chainspell ready
+Chainspell used
+Chakra
+Chakra is down
+Chakra ready
+Chakra used
+Chaos Roll
+Chaos Roll is down
+Chaos Roll ready
+Chaos Roll used
+Chaotic Eye
+Chaotic Eye is down
+Chaotic Eye ready
+Chaotic Eye used
+Chaotic Strike
+Chaotic Strike is down
+Chaotic Strike ready
+Chaotic Strike used
+Charged Whisker
+Charged Whisker is down
+Charged Whisker ready
+Charged Whisker used
+Chariotbuster Byakzak up
+Chariotbuster Byakzak window open
+Charm
+Charm is down
+Charm ready
+Charm used
+Charybdis up
+Charybdis window open
+Chi Blast
+Chi Blast is down
+Chi Blast ready
+Chi Blast used
+Chinook
+Chinook is down
+Chinook ready
+Chinook used
+Chivalry
+Chivalry is down
+Chivalry ready
+Chivalry used
+Chocobo Jig
+Chocobo Jig Ii
+Chocobo Jig Ii is down
+Chocobo Jig Ii ready
+Chocobo Jig Ii used
+Chocobo Jig is down
+Chocobo Jig ready
+Chocobo Jig used
+Chocoboleech up
+Chocoboleech window open
+Choke Breath
+Choke Breath is down
+Choke Breath ready
+Choke Breath used
+Chomp Rush
+Chomp Rush is down
+Chomp Rush ready
+Chomp Rush used
+Choral Roll
+Choral Roll is down
+Choral Roll ready
+Choral Roll used
+Chronoshift
+Chronoshift is down
+Chronoshift ready
+Chronoshift used
+Citipati up
+Citipati window open
+Clarion Call
+Clarion Call is down
+Clarion Call ready
+Clarion Call used
+Clarsach Call
+Clarsach Call is down
+Clarsach Call ready
+Clarsach Call used
+Claw
+Claw Cyclone
+Claw Cyclone is down
+Claw Cyclone ready
+Claw Cyclone used
+Claw is down
+Claw ready
+Claw used
+Climactic Flourish
+Climactic Flourish is down
+Climactic Flourish ready
+Climactic Flourish used
+Collaborator
+Collaborator is down
+Collaborator ready
+Collaborator used
+Collimated Fervor
+Collimated Fervor is down
+Collimated Fervor ready
+Collimated Fervor used
+Colorful Leshy up
+Colorful Leshy window open
+Companions Roll
+Companions Roll is down
+Companions Roll ready
+Companions Roll used
+Composure
+Composure is down
+Composure ready
+Composure used
+Concentric Pulse
+Concentric Pulse is down
+Concentric Pulse ready
+Concentric Pulse used
+Conflag Strike
+Conflag Strike is down
+Conflag Strike ready
+Conflag Strike used
+Conspirator
+Conspirator is down
+Conspirator ready
+Conspirator used
+Consume Mana
+Consume Mana is down
+Consume Mana ready
+Consume Mana used
+Contradance
+Contradance is down
+Contradance ready
+Contradance used
+Convergence
+Convergence is down
+Convergence ready
+Convergence used
+Convert
+Convert is down
+Convert ready
+Convert used
+Coo Keja The Unseen up
+Coo Keja The Unseen window open
+Cooldown
+Cooldown is down
+Cooldown ready
+Cooldown used
+Copy Image
+Copy Image is down
+Copy Image ready
+Corrosive Ooze
+Corrosive Ooze is down
+Corrosive Ooze ready
+Corrosive Ooze used
+Corsairs Roll
+Corsairs Roll is down
+Corsairs Roll ready
+Corsairs Roll used
+Count Bifrons up
+Count Bifrons window open
+Counterstance
+Counterstance is down
+Counterstance ready
+Counterstance used
+Coursers Roll
+Coursers Roll is down
+Coursers Roll ready
+Coursers Roll used
+Cover
+Cover is down
+Cover ready
+Cover used
+Crag Throw
+Crag Throw is down
+Crag Throw ready
+Crag Throw used
+Crescent Fang
+Crescent Fang is down
+Crescent Fang ready
+Crescent Fang used
+Crimson Howl
+Crimson Howl is down
+Crimson Howl ready
+Crimson Howl used
+Crimson-Toothed Pawberry up
+Crimson-Toothed Pawberry window open
+Crooked Cards
+Crooked Cards is down
+Crooked Cards ready
+Crooked Cards used
+Crossthrash
+Crossthrash is down
+Crossthrash ready
+Crossthrash used
+Crushed Krause up
+Crushed Krause window open
+Crypt Ghost up
+Crypt Ghost window open
+Crystal Blessing
+Crystal Blessing is down
+Crystal Blessing ready
+Crystal Blessing used
+Crystal Eater up
+Crystal Eater window open
+Curing Waltz
+Curing Waltz Ii
+Curing Waltz Ii is down
+Curing Waltz Ii ready
+Curing Waltz Ii used
+Curing Waltz Iii
+Curing Waltz Iii is down
+Curing Waltz Iii ready
+Curing Waltz Iii used
+Curing Waltz Iv
+Curing Waltz Iv is down
+Curing Waltz Iv ready
+Curing Waltz Iv used
+Curing Waltz V
+Curing Waltz V is down
+Curing Waltz V ready
+Curing Waltz V used
+Curing Waltz is down
+Curing Waltz ready
+Curing Waltz used
+Cursed Sphere
+Cursed Sphere is down
+Cursed Sphere ready
+Cursed Sphere used
+Cutting Cards
+Cutting Cards is down
+Cutting Cards ready
+Cutting Cards used
+Cwn Cyrff up
+Cwn Cyrff window open
+Cyclotail
+Cyclotail is down
+Cyclotail ready
+Cyclotail used
+Daggerclaw Dracos up
+Daggerclaw Dracos window open
+Dame Blanche up
+Dame Blanche window open
+Dancers Roll
+Dancers Roll is down
+Dancers Roll ready
+Dancers Roll used
+Dark Arts
+Dark Arts is down
+Dark Arts ready
+Dark Arts used
+Dark Maneuver
+Dark Maneuver is down
+Dark Maneuver ready
+Dark Maneuver used
+Dark Seal
+Dark Seal is down
+Dark Seal ready
+Dark Seal used
+Dark Shot
+Dark Shot is down
+Dark Shot ready
+Dark Shot used
+Dark Spore
+Dark Spore is down
+Dark Spore ready
+Dark Spore used
+Darting Kachaal Ja up
+Darting Kachaal Ja window open
+Deactivate
+Deactivate is down
+Deactivate ready
+Deactivate used
+Deadly Dodo up
+Deadly Dodo window open
+Death From Above up
+Death From Above window open
+Deconstruction
+Deconstruction is down
+Deconstruction ready
+Deconstruction used
+Decoy Shot
+Decoy Shot is down
+Decoy Shot ready
+Decoy Shot used
+Deep Breathing
+Deep Breathing is down
+Deep Breathing ready
+Deep Breathing used
+Defender
+Defender is down
+Defender ready
+Defender used
+Defense Boost
+Defense Boost is down
+Defense Boost ready
+Defoliate Leshy up
+Defoliate Leshy window open
+Dematerialize
+Dematerialize is down
+Dematerialize ready
+Dematerialize used
+Demonic Tiphia up
+Demonic Tiphia window open
+Deploy
+Deploy is down
+Deploy ready
+Deploy used
+Desperate Flourish
+Desperate Flourish is down
+Desperate Flourish ready
+Desperate Flourish used
+Despoil
+Despoil is down
+Despoil ready
+Despoil used
+Despot up
+Despot window open
+Deus Ex Automata
+Deus Ex Automata is down
+Deus Ex Automata ready
+Deus Ex Automata used
+Devotion
+Devotion is down
+Devotion ready
+Devotion used
+Devout Radol Ja up
+Devout Radol Ja window open
+Diabolic Eye
+Diabolic Eye is down
+Diabolic Eye ready
+Diabolic Eye used
+Diamond Daig up
+Diamond Daig window open
+Diamond Dust
+Diamond Dust is down
+Diamond Dust ready
+Diamond Dust used
+Diamond Quadav up
+Diamond Quadav window open
+Diamond Storm
+Diamond Storm is down
+Diamond Storm ready
+Diamond Storm used
+Diffusion
+Diffusion is down
+Diffusion ready
+Diffusion used
+Digest
+Digest is down
+Digest ready
+Digest used
+Dirtyhanded Gochakzuk up
+Dirtyhanded Gochakzuk window open
+Disembowel
+Disembowel is down
+Disembowel ready
+Disembowel used
+Dismiss
+Dismiss is down
+Dismiss ready
+Dismiss used
+Divine Caress
+Divine Caress is down
+Divine Caress ready
+Divine Caress used
+Divine Emblem
+Divine Emblem is down
+Divine Emblem ready
+Divine Emblem used
+Divine Seal
+Divine Seal is down
+Divine Seal ready
+Divine Seal used
+Divine Waltz
+Divine Waltz Ii
+Divine Waltz Ii is down
+Divine Waltz Ii ready
+Divine Waltz Ii used
+Divine Waltz is down
+Divine Waltz ready
+Divine Waltz used
+Dodge
+Dodge is down
+Dodge ready
+Dodge used
+Doppelganger Dio up
+Doppelganger Dio window open
+Doppelganger Gog up
+Doppelganger Gog window open
+Dorgerwor The Astute up
+Dorgerwor The Astute window open
+Dosetsu Tree up
+Dosetsu Tree window open
+Double Claw
+Double Claw is down
+Double Claw ready
+Double Claw used
+Double Punch
+Double Punch is down
+Double Punch ready
+Double Punch used
+Double Shot
+Double Shot is down
+Double Shot ready
+Double Shot used
+Double Slap
+Double Slap is down
+Double Slap ready
+Double Slap used
+Double-up
+Double-up is down
+Double-up ready
+Double-up used
+Drachen Roll
+Drachen Roll is down
+Drachen Roll ready
+Drachen Roll used
+Dragon Breaker
+Dragon Breaker is down
+Dragon Breaker ready
+Dragon Breaker used
+Dragonscaled Bugaal Ja up
+Dragonscaled Bugaal Ja window open
+Drain Samba
+Drain Samba Ii
+Drain Samba Ii is down
+Drain Samba Ii ready
+Drain Samba Ii used
+Drain Samba Iii
+Drain Samba Iii is down
+Drain Samba Iii ready
+Drain Samba Iii used
+Drain Samba is down
+Drain Samba ready
+Drain Samba used
+Drainkiss
+Drainkiss is down
+Drainkiss ready
+Drainkiss used
+Dream Flower
+Dream Flower is down
+Dream Flower ready
+Dream Flower used
+Dream Shroud
+Dream Shroud is down
+Dream Shroud ready
+Dream Shroud used
+Drexerion The Condemned up
+Drexerion The Condemned window open
+Drone Crawler up
+Drone Crawler window open
+Drooling Daisy up
+Drooling Daisy window open
+Duke Haborym up
+Duke Haborym window open
+Dune Widow up
+Dune Widow window open
+Dust Cloud
+Dust Cloud is down
+Dust Cloud ready
+Dust Cloud used
+Eagle Eye Shot
+Eagle Eye Shot is down
+Eagle Eye Shot ready
+Eagle Eye Shot used
+Earth Maneuver
+Earth Maneuver is down
+Earth Maneuver ready
+Earth Maneuver used
+Earth Shot
+Earth Shot is down
+Earth Shot ready
+Earth Shot used
+Earthen Armor
+Earthen Armor is down
+Earthen Armor ready
+Earthen Armor used
+Earthen Fury
+Earthen Fury is down
+Earthen Fury ready
+Earthen Fury used
+Earthen Ward
+Earthen Ward is down
+Earthen Ward ready
+Earthen Ward used
+Eastern Shadow up
+Eastern Shadow window open
+Eba up
+Eba window open
+Ebullience
+Ebullience is down
+Ebullience ready
+Ebullience used
+Eclipse Bite
+Eclipse Bite is down
+Eclipse Bite ready
+Eclipse Bite used
+Ecliptic Attrition
+Ecliptic Attrition is down
+Ecliptic Attrition ready
+Ecliptic Attrition used
+Ecliptic Growl
+Ecliptic Growl is down
+Ecliptic Growl ready
+Ecliptic Growl used
+Ecliptic Howl
+Ecliptic Howl is down
+Ecliptic Howl ready
+Ecliptic Howl used
+Edacious Opo-Opo up
+Edacious Opo-Opo window open
+Eerie Eye
+Eerie Eye is down
+Eerie Eye ready
+Eerie Eye used
+Efflux
+Efflux is down
+Efflux ready
+Efflux used
+Effusion
+Effusion is down
+Effusion ready
+Effusion used
+Elemental Seal
+Elemental Seal is down
+Elemental Seal ready
+Elemental Seal used
+Elemental Sforzo
+Elemental Sforzo is down
+Elemental Sforzo ready
+Elemental Sforzo used
+Elemental Siphon
+Elemental Siphon is down
+Elemental Siphon ready
+Elemental Siphon used
+Ellyllon up
+Ellyllon window open
+Embolden
+Embolden is down
+Embolden ready
+Embolden used
+Emergent Elm up
+Emergent Elm window open
+Energetic Eruca up
+Energetic Eruca window open
+Enkelados up
+Enkelados window open
+Enlightenment
+Enlightenment is down
+Enlightenment ready
+Enlightenment used
+Enmity Douse
+Enmity Douse is down
+Enmity Douse ready
+Enmity Douse used
+Entrust
+Entrust is down
+Entrust ready
+Entrust used
+Epialtes up
+Epialtes window open
+Equanimity
+Equanimity is down
+Equanimity ready
+Equanimity used
+Ereshkigal up
+Ereshkigal window open
+Eurymedon up
+Eurymedon window open
+Eurytos up
+Eurytos window open
+Evokers Roll
+Evokers Roll is down
+Evokers Roll ready
+Evokers Roll used
+Extirpating Salvo
+Extirpating Salvo is down
+Extirpating Salvo ready
+Extirpating Salvo used
+Eyy Mon The Ironbreaker up
+Eyy Mon The Ironbreaker window open
+Fafnir up
+Fafnir window open
+Falcatus Aranei up
+Falcatus Aranei window open
+Familiar
+Familiar is down
+Familiar ready
+Familiar used
+Fan Dance
+Fan Dance is down
+Fan Dance ready
+Fan Dance used
+Fantod
+Fantod is down
+Fantod ready
+Fantod used
+Farlarder The Shrewd up
+Farlarder The Shrewd window open
+Father Frost up
+Father Frost window open
+Faust up
+Faust window open
+Fealty
+Fealty is down
+Fealty ready
+Fealty used
+Feather Step
+Feather Step is down
+Feather Step ready
+Feather Step used
+Feint
+Feint is down
+Feint ready
+Feint used
+Feral Howl
+Feral Howl is down
+Feral Howl ready
+Feral Howl used
+Fight
+Fight is down
+Fight ready
+Fight used
+Fighters Roll
+Fighters Roll is down
+Fighters Roll ready
+Fighters Roll used
+Filamented Hold
+Filamented Hold is down
+Filamented Hold ready
+Filamented Hold used
+Fire Ii
+Fire Ii is down
+Fire Ii ready
+Fire Ii used
+Fire Iv
+Fire Iv is down
+Fire Iv ready
+Fire Iv used
+Fire Maneuver
+Fire Maneuver is down
+Fire Maneuver ready
+Fire Maneuver used
+Fire Shot
+Fire Shot is down
+Fire Shot ready
+Fire Shot used
+Fireball
+Fireball is down
+Fireball ready
+Fireball used
+Flabra
+Flabra is down
+Flabra ready
+Flabra used
+Flaming Crush
+Flaming Crush is down
+Flaming Crush ready
+Flaming Crush used
+Flashy Shot
+Flashy Shot is down
+Flashy Shot ready
+Flashy Shot used
+Flauros up
+Flauros window open
+Flee
+Flee is down
+Flee ready
+Flee used
+Fleet Wind
+Fleet Wind is down
+Fleet Wind ready
+Fleet Wind used
+Flourishes I
+Flourishes I is down
+Flourishes I ready
+Flourishes I used
+Flourishes Ii
+Flourishes Ii is down
+Flourishes Ii ready
+Flourishes Ii used
+Flourishes Iii
+Flourishes Iii is down
+Flourishes Iii ready
+Flourishes Iii used
+Fluid Spread
+Fluid Spread is down
+Fluid Spread ready
+Fluid Spread used
+Fluid Toss
+Fluid Toss is down
+Fluid Toss ready
+Fluid Toss used
+Fly High
+Fly High is down
+Fly High ready
+Fly High used
+Focalization
+Focalization is down
+Focalization ready
+Focalization used
+Focus
+Focus is down
+Focus ready
+Focus used
+Fogweaver Mozzfuzz up
+Fogweaver Mozzfuzz window open
+Fold
+Fold is down
+Fold ready
+Fold used
+Foot Kick
+Foot Kick is down
+Foot Kick ready
+Foot Kick used
+Footwork
+Footwork is down
+Footwork ready
+Footwork used
+Foreseer Oramix up
+Foreseer Oramix window open
+Formless Strikes
+Formless Strikes is down
+Formless Strikes ready
+Formless Strikes used
+Foul Meat up
+Foul Meat window open
+Foul Waters
+Foul Waters is down
+Foul Waters ready
+Foul Waters used
+Fradubio up
+Fradubio window open
+Fraelissa up
+Fraelissa window open
+Frenzied Rage
+Frenzied Rage is down
+Frenzied Rage ready
+Frenzied Rage used
+Friar Rush up
+Friar Rush window open
+Frogkick
+Frogkick is down
+Frogkick ready
+Frogkick used
+Frost Armor
+Frost Armor is down
+Frost Armor ready
+Frost Armor used
+Frostmane up
+Frostmane window open
+Full Circle
+Full Circle is down
+Full Circle ready
+Full Circle used
+Fungus Beetle up
+Fungus Beetle window open
+Futae
+Futae is down
+Futae ready
+Futae used
+Fyuu The Seabellow up
+Fyuu The Seabellow window open
+Gallants Roll
+Gallants Roll is down
+Gallants Roll ready
+Gallants Roll used
+Gambit
+Gambit is down
+Gambit ready
+Gambit used
+Garfurlar The Rabid up
+Garfurlar The Rabid window open
+Gargantua up
+Gargantua window open
+Garharlor The Unruly up
+Garharlor The Unruly window open
+Garhorlur The Brutal up
+Garhorlur The Brutal window open
+Gauge
+Gauge is down
+Gauge ready
+Gauge used
+Geist Wall
+Geist Wall is down
+Geist Wall ready
+Geist Wall used
+Gelus
+Gelus is down
+Gelus ready
+Gelus used
+Genbu up
+Genbu window open
+Geocrush
+Geocrush is down
+Geocrush ready
+Geocrush used
+Geyser Lizard up
+Geyser Lizard window open
+Glittering Ruby
+Glittering Ruby is down
+Glittering Ruby ready
+Glittering Ruby used
+Gloeosuccus
+Gloeosuccus is down
+Gloeosuccus ready
+Gloeosuccus used
+Gloom Spray
+Gloom Spray is down
+Gloom Spray ready
+Gloom Spray used
+Goblin Archaeologist up
+Goblin Archaeologist window open
+Goblin Collector up
+Goblin Collector window open
+Goblin Wolfman up
+Goblin Wolfman window open
+Goblinsavior Heronox up
+Goblinsavior Heronox window open
+Golden Bat up
+Golden Bat window open
+Golden-Tongued Culberry up
+Golden-Tongued Culberry window open
+Goliath up
+Goliath window open
+Grand Duke Batym up
+Grand Duke Batym window open
+Grand Fall
+Grand Fall is down
+Grand Fall ready
+Grand Fall used
+Grand Pas
+Grand Pas is down
+Grand Pas ready
+Grand Pas used
+Grapple
+Grapple is down
+Grapple ready
+Grapple used
+Gration up
+Gration window open
+Guardian Crawler up
+Guardian Crawler window open
+Guivre up
+Guivre window open
+Gulool Ja Ja up
+Gulool Ja Ja window open
+Gurfurlur The Menacing up
+Gurfurlur The Menacing window open
+Habetrot up
+Habetrot window open
+Hagakure
+Hagakure is down
+Hagakure ready
+Hagakure used
+Hakutaku up
+Hakutaku window open
+Hamanoha
+Hamanoha is down
+Hamanoha ready
+Hamanoha used
+Harden Shell
+Harden Shell is down
+Harden Shell ready
+Harden Shell used
+Hasso
+Hasso is down
+Hasso ready
+Hasso used
+Hastatus Xi-Xii up
+Hastatus Xi-Xii window open
+Haste Samba
+Haste Samba is down
+Haste Samba ready
+Haste Samba used
+Hastega
+Hastega Ii
+Hastega Ii is down
+Hastega Ii ready
+Hastega Ii used
+Hastega is down
+Hastega ready
+Hastega used
+Haty up
+Haty window open
+Hawkeyed Dnatbat up
+Hawkeyed Dnatbat window open
+Head Butt
+Head Butt is down
+Head Butt ready
+Head Butt used
+Heady Artifice
+Heady Artifice is down
+Heady Artifice ready
+Heady Artifice used
+Healers Roll
+Healers Roll is down
+Healers Roll ready
+Healers Roll used
+Healing Ruby
+Healing Ruby Ii
+Healing Ruby Ii is down
+Healing Ruby Ii ready
+Healing Ruby Ii used
+Healing Ruby is down
+Healing Ruby ready
+Healing Ruby used
+Healing Waltz
+Healing Waltz is down
+Healing Waltz ready
+Healing Waltz used
+Heavenly Strike
+Heavenly Strike is down
+Heavenly Strike ready
+Heavenly Strike used
+Heavenward Howl
+Heavenward Howl is down
+Heavenward Howl ready
+Heavenward Howl used
+Heel
+Heel is down
+Heel ready
+Heel used
+Heliodromos up
+Heliodromos window open
+Helldiver up
+Helldiver window open
+Hellion up
+Hellion window open
+Hercules Beetle up
+Hercules Beetle window open
+Hi-freq Field
+Hi-freq Field is down
+Hi-freq Field ready
+Hi-freq Field used
+Hide
+Hide is down
+Hide ready
+Hide used
+High Jump
+High Jump is down
+High Jump ready
+High Jump used
+Hippolytos up
+Hippolytos window open
+Holy Circle
+Holy Circle is down
+Holy Circle ready
+Holy Circle used
+Holy Mist
+Holy Mist is down
+Holy Mist ready
+Holy Mist used
+Hoo Mjuu The Torrent up
+Hoo Mjuu The Torrent window open
+Hoof Volley
+Hoof Volley is down
+Hoof Volley ready
+Hoof Volley used
+Howling Moon
+Howling Moon is down
+Howling Moon ready
+Howling Moon used
+Hundred Fists
+Hundred Fists is down
+Hundred Fists ready
+Hundred Fists used
+Hundredfaced Hapool Ja up
+Hundredfaced Hapool Ja window open
+Hundredscar Hajwaj up
+Hundredscar Hajwaj window open
+Hunters Roll
+Hunters Roll is down
+Hunters Roll ready
+Hunters Roll used
+Hydra up
+Hydra window open
+Hysteric Assault
+Hysteric Assault is down
+Hysteric Assault ready
+Hysteric Assault used
+Ice Maneuver
+Ice Maneuver is down
+Ice Maneuver ready
+Ice Maneuver used
+Ice Shot
+Ice Shot is down
+Ice Shot ready
+Ice Shot used
+Ignis
+Ignis is down
+Ignis ready
+Ignis used
+Imdugud up
+Imdugud window open
+Immanence
+Immanence is down
+Immanence ready
+Immanence used
+Impact
+Impact is down
+Impact ready
+Impact used
+Impetus
+Impetus is down
+Impetus ready
+Impetus used
+Indich up
+Indich window open
+Infected Leech
+Infected Leech is down
+Infected Leech ready
+Infected Leech used
+Inferno
+Inferno Howl
+Inferno Howl is down
+Inferno Howl ready
+Inferno Howl used
+Inferno is down
+Inferno ready
+Inferno used
+Infrasonics
+Infrasonics is down
+Infrasonics ready
+Infrasonics used
+Inner Strength
+Inner Strength is down
+Inner Strength ready
+Inner Strength used
+Innin
+Innin is down
+Innin ready
+Innin used
+Intervene
+Intervene is down
+Intervene ready
+Intervene used
+Intimidate
+Intimidate is down
+Intimidate ready
+Intimidate used
+Intulo up
+Intulo window open
+Invincible
+Invincible is down
+Invincible ready
+Invincible used
+Issekigan
+Issekigan is down
+Issekigan ready
+Issekigan used
+Ixtab up
+Ixtab window open
+Jaded Jody up
+Jaded Jody window open
+Jaggedy-Eared Jack up
+Jaggedy-Eared Jack window open
+Jailer Of Faith up
+Jailer Of Faith window open
+Jailer Of Fortitude up
+Jailer Of Fortitude window open
+Jailer Of Hope up
+Jailer Of Hope window open
+Jailer Of Justice up
+Jailer Of Justice window open
+Jailer Of Love up
+Jailer Of Love window open
+Jailer Of Prudence up
+Jailer Of Prudence window open
+Jailer Of Temperance up
+Jailer Of Temperance window open
+Jettatura
+Jettatura is down
+Jettatura ready
+Jettatura used
+Jigs
+Jigs is down
+Jigs ready
+Jigs used
+Jolly Green up
+Jolly Green window open
+Jormungand up
+Jormungand window open
+Judgment Bolt
+Judgment Bolt is down
+Judgment Bolt ready
+Judgment Bolt used
+Juggler Hecatomb up
+Juggler Hecatomb window open
+Jump
+Jump Ready
+Jump is down
+Jump ready
+Jump used
+Juu Duzu The Whirlwind up
+Juu Duzu The Whirlwind window open
+Katabatic Blades
+Katabatic Blades is down
+Katabatic Blades ready
+Katabatic Blades used
+Keeper Of Halidom up
+Keeper Of Halidom window open
+Killer Instinct
+Killer Instinct is down
+Killer Instinct ready
+Killer Instinct used
+King Arthro up
+King Arthro window open
+King Behemoth up
+King Behemoth window open
+King Vinegarroon up
+King Vinegarroon window open
+Kirata up
+Kirata window open
+Kirin up
+Kirin window open
+Kirlirger The Abhorrent up
+Kirlirger The Abhorrent window open
+Konzen-ittai
+Konzen-ittai is down
+Konzen-ittai ready
+Konzen-ittai used
+Kreutzet up
+Kreutzet window open
+Kurrea up
+Kurrea window open
+Lamb Chop
+Lamb Chop is down
+Lamb Chop ready
+Lamb Chop used
+Larceny
+Larceny is down
+Larceny ready
+Larceny used
+Last Resort
+Last Resort is down
+Last Resort ready
+Last Resort used
+Lasting Emanation
+Lasting Emanation is down
+Lasting Emanation ready
+Lasting Emanation used
+Leaf Dagger
+Leaf Dagger is down
+Leaf Dagger ready
+Leaf Dagger used
+Leaping Lizzy up
+Leaping Lizzy window open
+Leave
+Leave is down
+Leave ready
+Leave used
+Leech King up
+Leech King window open
+Leshonki up
+Leshonki window open
+Level X Holy
+Level X Holy is down
+Level X Holy ready
+Level X Holy used
+Libra
+Libra is down
+Libra ready
+Libra used
+Lich C Magnus up
+Lich C Magnus window open
+Liement
+Liement is down
+Liement ready
+Liement used
+Life Cycle
+Life Cycle is down
+Life Cycle ready
+Life Cycle used
+Light Arts
+Light Arts is down
+Light Arts ready
+Light Arts used
+Light Maneuver
+Light Maneuver is down
+Light Maneuver ready
+Light Maneuver used
+Light Shot
+Light Shot is down
+Light Shot ready
+Light Shot used
+Lightning Armor
+Lightning Armor is down
+Lightning Armor ready
+Lightning Armor used
+Lindwurm up
+Lindwurm window open
+Lobais up
+Lobais window open
+Lord Of Onzozo up
+Lord Of Onzozo window open
+Luaith up
+Luaith window open
+Lumber Jack up
+Lumber Jack window open
+Lumbering Lambert up
+Lumbering Lambert window open
+Lunar Bay
+Lunar Bay is down
+Lunar Bay ready
+Lunar Bay used
+Lunar Cry
+Lunar Cry is down
+Lunar Cry ready
+Lunar Cry used
+Lunar Roar
+Lunar Roar is down
+Lunar Roar ready
+Lunar Roar used
+Lunatic Voice
+Lunatic Voice is down
+Lunatic Voice ready
+Lunatic Voice used
+Lunge
+Lunge is down
+Lunge ready
+Lunge used
+Lux
+Lux is down
+Lux ready
+Lux used
+Maguss Roll
+Maguss Roll is down
+Maguss Roll ready
+Maguss Roll used
+Mahisha up
+Mahisha window open
+Maighdean Uaine up
+Maighdean Uaine window open
+Maintenance
+Maintenance is down
+Maintenance ready
+Maintenance used
+Majesty
+Majesty is down
+Majesty ready
+Majesty used
+Maltha up
+Maltha window open
+Mana Cede
+Mana Cede is down
+Mana Cede ready
+Mana Cede used
+Mana Wall
+Mana Wall is down
+Mana Wall ready
+Mana Wall used
+Manafont
+Manafont is down
+Manafont ready
+Manafont used
+Manawell
+Manawell is down
+Manawell ready
+Manawell used
+Mandibular Bite
+Mandibular Bite is down
+Mandibular Bite ready
+Mandibular Bite used
+Manes up
+Manes window open
+Maneuver waiting
+Manifestation
+Manifestation is down
+Manifestation ready
+Manifestation used
+Mantra
+Mantra is down
+Mantra ready
+Mantra used
+Marcato
+Marcato is down
+Marcato ready
+Marcato used
+Marquis Allocen up
+Marquis Allocen window open
+Marquis Amon up
+Marquis Amon window open
+Martyr
+Martyr is down
+Martyr ready
+Martyr used
+Masan up
+Masan window open
+Matron Crawler up
+Matron Crawler window open
+Meditate
+Meditate is down
+Meditate ready
+Meditate used
+Medusa up
+Medusa window open
+Mee Deggi The Punisher up
+Mee Deggi The Punisher window open
+Mega Scissors
+Mega Scissors is down
+Mega Scissors ready
+Mega Scissors used
+Megalith Throw
+Megalith Throw is down
+Megalith Throw ready
+Megalith Throw used
+Meikyo Shisui
+Meikyo Shisui is down
+Meikyo Shisui ready
+Meikyo Shisui used
+Mending Halation
+Mending Halation is down
+Mending Halation ready
+Mending Halation used
+Metallic Body
+Metallic Body is down
+Metallic Body ready
+Metallic Body used
+Meteor Strike
+Meteor Strike is down
+Meteor Strike ready
+Meteor Strike used
+Meteorite
+Meteorite is down
+Meteorite ready
+Meteorite used
+Meteormauler Zhagtegg up
+Meteormauler Zhagtegg window open
+Mewing Lullaby
+Mewing Lullaby is down
+Mewing Lullaby ready
+Mewing Lullaby used
+Meww The Turtlerider up
+Meww The Turtlerider window open
+Mighty Strikes
+Mighty Strikes is down
+Mighty Strikes ready
+Mighty Strikes used
+Mijin Gakure
+Mijin Gakure is down
+Mijin Gakure ready
+Mijin Gakure used
+Mikage
+Mikage is down
+Mikage ready
+Mikage used
+Mimas up
+Mimas window open
+Mischievous Micholas up
+Mischievous Micholas window open
+Misers Roll
+Misers Roll is down
+Misers Roll ready
+Misers Roll used
+Modus Veritas
+Modus Veritas is down
+Modus Veritas ready
+Modus Veritas used
+Molting Plumage
+Molting Plumage is down
+Molting Plumage ready
+Molting Plumage used
+Monks Roll
+Monks Roll is down
+Monks Roll ready
+Monks Roll used
+Moo Ouzi The Swiftblade up
+Moo Ouzi The Swiftblade window open
+Moonlit Charge
+Moonlit Charge is down
+Moonlit Charge ready
+Moonlit Charge used
+Morbolger up
+Morbolger window open
+Morion Worm up
+Morion Worm window open
+Mother Globe up
+Mother Globe window open
+Mountain Buster
+Mountain Buster is down
+Mountain Buster ready
+Mountain Buster used
+Mountain Worm up
+Mountain Worm window open
+Mouu The Waverider up
+Mouu The Waverider window open
+Mug
+Mug is down
+Mug ready
+Mug used
+Mycophile up
+Mycophile window open
+Mysticmaker Profblix up
+Mysticmaker Profblix window open
+Namtar up
+Namtar window open
+Narasimha up
+Narasimha window open
+Naturalists Roll
+Naturalists Roll is down
+Naturalists Roll ready
+Naturalists Roll used
+Nectarous Deluge
+Nectarous Deluge is down
+Nectarous Deluge ready
+Nectarous Deluge used
+Needleshot
+Needleshot is down
+Needleshot ready
+Needleshot used
+Nepenthic Plunge
+Nepenthic Plunge is down
+Nepenthic Plunge ready
+Nepenthic Plunge used
+Nether Blast
+Nether Blast is down
+Nether Blast ready
+Nether Blast used
+Nether Void
+Nether Void is down
+Nether Void ready
+Nether Void used
+Nidhogg up
+Nidhogg window open
+Night Terror
+Night Terror is down
+Night Terror ready
+Night Terror used
+Nightingale
+Nightingale is down
+Nightingale ready
+Nightingale used
+Nightmare
+Nightmare Vase up
+Nightmare Vase window open
+Nightmare is down
+Nightmare ready
+Nightmare used
+Nihility Song
+Nihility Song is down
+Nihility Song ready
+Nihility Song used
+Nihniknoovi up
+Nihniknoovi window open
+Nimble Snap
+Nimble Snap is down
+Nimble Snap ready
+Nimble Snap used
+Ninja Roll
+Ninja Roll is down
+Ninja Roll ready
+Ninja Roll used
+No Foot Rise
+No Foot Rise is down
+No Foot Rise ready
+No Foot Rise used
+No maneuvers active
+Noble Mold up
+Noble Mold window open
+Noctoshield
+Noctoshield is down
+Noctoshield ready
+Noctoshield used
+Noisome Powder
+Noisome Powder is down
+Noisome Powder ready
+Noisome Powder used
+Northern Shadow up
+Northern Shadow window open
+Novv The Whitehearted up
+Novv The Whitehearted window open
+Nue up
+Nue window open
+Numbing Noise
+Numbing Noise is down
+Numbing Noise ready
+Numbing Noise used
+Numbshroom
+Numbshroom is down
+Numbshroom ready
+Numbshroom used
+Nunyenunc up
+Nunyenunc window open
+Nussknacker up
+Nussknacker window open
+Ocean Sahagin up
+Ocean Sahagin window open
+Odqan up
+Odqan window open
+Odyllic Subterfuge
+Odyllic Subterfuge is down
+Odyllic Subterfuge ready
+Odyllic Subterfuge used
+Ogama up
+Ogama window open
+Ogygos up
+Ogygos window open
+Old Two-Wings up
+Old Two-Wings window open
+Olla Grande up
+Olla Grande window open
+One For All
+One For All is down
+One For All ready
+One For All used
+One maneuver active
+Oni Carcass up
+Oni Carcass window open
+Ophion up
+Ophion window open
+Orcish Hexspinner up
+Orcish Hexspinner window open
+Orcish Overlord up
+Orcish Overlord window open
+Orcish Panzer up
+Orcish Panzer window open
+Orcish Wallbreacher up
+Orcish Wallbreacher window open
+Orcish Warlord up
+Orcish Warlord window open
+Orctrap up
+Orctrap window open
+Ose up
+Ose window open
+Overdrive
+Overdrive is down
+Overdrive ready
+Overdrive used
+Overkill
+Overkill is down
+Overkill ready
+Overkill used
+Overlord Bakgodek up
+Overlord Bakgodek window open
+Pacifying Ruby
+Pacifying Ruby is down
+Pacifying Ruby ready
+Pacifying Ruby used
+Padfoot up
+Padfoot window open
+Pahh The Gullcaller up
+Pahh The Gullcaller window open
+Palisade
+Palisade is down
+Palisade ready
+Palisade used
+Pallas up
+Pallas window open
+Palsy Pollen
+Palsy Pollen is down
+Palsy Pollen ready
+Palsy Pollen used
+Panzer Percival up
+Panzer Percival window open
+Parsimony
+Parsimony is down
+Parsimony ready
+Parsimony used
+Pavor Nocturnus
+Pavor Nocturnus is down
+Pavor Nocturnus ready
+Pavor Nocturnus used
+Peallaidh up
+Peallaidh window open
+Pecking Flurry
+Pecking Flurry is down
+Pecking Flurry ready
+Pecking Flurry used
+Peg Powler up
+Peg Powler window open
+Pelican up
+Pelican window open
+Pentapeck
+Pentapeck is down
+Pentapeck ready
+Pentapeck used
+Penury
+Penury is down
+Penury ready
+Penury used
+Perfect Counter
+Perfect Counter is down
+Perfect Counter ready
+Perfect Counter used
+Perfect Defense
+Perfect Defense is down
+Perfect Defense ready
+Perfect Defense used
+Perfect Dodge
+Perfect Dodge is down
+Perfect Dodge ready
+Perfect Dodge used
+Perpetuance
+Perpetuance is down
+Perpetuance ready
+Perpetuance used
+Pestilent Plume
+Pestilent Plume is down
+Pestilent Plume ready
+Pestilent Plume used
+Pet Commands
+Pet Commands is down
+Pet Commands ready
+Pet Commands used
+Pet not engaged
+Pflug
+Pflug is down
+Pflug ready
+Pflug used
+Phanduron The Condemned up
+Phanduron The Condemned window open
+Phantom Roll
+Phantom Roll is down
+Phantom Roll ready
+Phantom Roll used
+Phantom Worm up
+Phantom Worm window open
+Pianissimo
+Pianissimo is down
+Pianissimo ready
+Pianissimo used
+Placeholder up
+Poison Nails
+Poison Nails is down
+Poison Nails ready
+Poison Nails used
+Poisonhand Gnadgad up
+Poisonhand Gnadgad window open
+Polybotes up
+Polybotes window open
+Porphyrion up
+Porphyrion window open
+Power Attack
+Power Attack is down
+Power Attack ready
+Power Attack used
+Predator Claws
+Predator Claws is down
+Predator Claws ready
+Predator Claws used
+Predatory Glare
+Predatory Glare is down
+Predatory Glare ready
+Predatory Glare used
+Presto
+Presto is down
+Presto ready
+Presto used
+Proconsul Xii up
+Proconsul Xii window open
+Proteus up
+Proteus window open
+Provoke
+Provoke is down
+Provoke ready
+Provoke used
+Pulverized Pfeffer up
+Pulverized Pfeffer window open
+Punch
+Punch is down
+Punch ready
+Punch used
+Puppet Roll
+Puppet Roll is down
+Puppet Roll ready
+Puppet Roll used
+Purulent Ooze
+Purulent Ooze is down
+Purulent Ooze ready
+Purulent Ooze used
+Queasyshroom
+Queasyshroom is down
+Queasyshroom ready
+Queasyshroom used
+Queen Crawler up
+Queen Crawler window open
+Quick Draw
+Quick Draw is down
+Quick Draw ready
+Quick Draw used
+Quickstep
+Quickstep is down
+Quickstep ready
+Quickstep used
+Qull The Shellbuster up
+Qull The Shellbuster window open
+Quu Domi The Gallant up
+Quu Domi The Gallant window open
+Radial Arcana
+Radial Arcana is down
+Radial Arcana ready
+Radial Arcana used
+Rage
+Rage is down
+Rage ready
+Rage used
+Raise Ii
+Raise Ii is down
+Raise Ii ready
+Raise Ii used
+Rampaging Ram up
+Rampaging Ram window open
+Rampart
+Rampart is down
+Rampart ready
+Rampart used
+Random Deal
+Random Deal is down
+Random Deal ready
+Random Deal used
+Random Needles
+Random Needles is down
+Random Needles ready
+Random Needles used
+Rapture
+Rapture is down
+Rapture ready
+Rapture used
+Ravin Raven up
+Ravin Raven window open
+Rayke
+Rayke is down
+Rayke ready
+Rayke used
+Razor Fang
+Razor Fang is down
+Razor Fang ready
+Razor Fang used
+Ready
+Ready is down
+Ready ready
+Ready used
+Recoil Dive
+Recoil Dive is down
+Recoil Dive ready
+Recoil Dive used
+Regal Gash
+Regal Gash is down
+Regal Gash ready
+Regal Gash used
+Regal Scratch
+Regal Scratch is down
+Regal Scratch ready
+Regal Scratch used
+Release
+Release is down
+Release ready
+Release used
+Relinquish
+Relinquish is down
+Relinquish ready
+Relinquish used
+Reminder
+Repair
+Repair is down
+Repair ready
+Repair used
+Reraise Ii
+Reraise Ii is down
+Reraise Ii ready
+Reraise Ii used
+Restoring Breath
+Restoring Breath is down
+Restoring Breath ready
+Restoring Breath used
+Restraint
+Restraint is down
+Restraint ready
+Restraint used
+Retaliation
+Retaliation is down
+Retaliation ready
+Retaliation used
+Retreat
+Retreat is down
+Retreat ready
+Retreat used
+Retrieve
+Retrieve is down
+Retrieve ready
+Retrieve used
+Reverse Flourish
+Reverse Flourish is down
+Reverse Flourish ready
+Reverse Flourish used
+Reward
+Reward is down
+Reward ready
+Reward used
+Rhino Attack
+Rhino Attack is down
+Rhino Attack ready
+Rhino Attack used
+Rhino Guard
+Rhino Guard is down
+Rhino Guard ready
+Rhino Guard used
+Rhinowrecker
+Rhinowrecker is down
+Rhinowrecker ready
+Rhinowrecker used
+Rhoikos up
+Rhoikos window open
+Rhoitos up
+Rhoitos window open
+Ripper Fang
+Ripper Fang is down
+Ripper Fang ready
+Ripper Fang used
+Roar
+Roar is down
+Roar ready
+Roar used
+Roc up
+Roc window open
+Rock Buster
+Rock Buster is down
+Rock Buster ready
+Rock Buster used
+Rock Throw
+Rock Throw is down
+Rock Throw ready
+Rock Throw used
+Rogues Roll
+Rogues Roll is down
+Rogues Roll ready
+Rogues Roll used
+Role Reversal
+Role Reversal is down
+Role Reversal ready
+Role Reversal used
+Rolling Thunder
+Rolling Thunder is down
+Rolling Thunder ready
+Rolling Thunder used
+Rose Garden up
+Rose Garden window open
+Roundhouse
+Roundhouse is down
+Roundhouse ready
+Roundhouse used
+Ruinous Omen
+Ruinous Omen is down
+Ruinous Omen ready
+Ruinous Omen used
+Run Wild
+Run Wild is down
+Run Wild ready
+Run Wild used
+Rune Enchantment
+Rune Enchantment is down
+Rune Enchantment ready
+Rune Enchantment used
+Runeists Roll
+Runeists Roll is down
+Runeists Roll ready
+Runeists Roll used
+Rush
+Rush is down
+Rush ready
+Rush used
+Saber Dance
+Saber Dance is down
+Saber Dance ready
+Saber Dance used
+Sabotender Bailarin up
+Sabotender Bailarin window open
+Sabotender Bailarina up
+Sabotender Bailarina window open
+Sabotender Mariachi up
+Sabotender Mariachi window open
+Saboteur
+Saboteur is down
+Saboteur ready
+Saboteur used
+Sacrificial Goblet up
+Sacrificial Goblet window open
+Sacrosanctity
+Sacrosanctity is down
+Sacrosanctity ready
+Sacrosanctity used
+Sagittarius X-Xiii up
+Sagittarius X-Xiii window open
+Sambas
+Sambas is down
+Sambas ready
+Sambas used
+Samurai Roll
+Samurai Roll is down
+Samurai Roll ready
+Samurai Roll used
+Sandblast
+Sandblast is down
+Sandblast ready
+Sandblast used
+Sandpit
+Sandpit is down
+Sandpit ready
+Sandpit used
+Sange
+Sange is down
+Sange ready
+Sange used
+Scarlet Delirium
+Scarlet Delirium is down
+Scarlet Delirium ready
+Scarlet Delirium used
+Scavenge
+Scavenge is down
+Scavenge ready
+Scavenge used
+Scholars Roll
+Scholars Roll is down
+Scholars Roll ready
+Scholars Roll used
+Scissor Guard
+Scissor Guard is down
+Scissor Guard ready
+Scissor Guard used
+Scream
+Scream is down
+Scream ready
+Scream used
+Scythe Tail
+Scythe Tail is down
+Scythe Tail ready
+Scythe Tail used
+Sea Hog up
+Sea Hog window open
+Sea Horror up
+Sea Horror window open
+Searing Light
+Searing Light is down
+Searing Light ready
+Searing Light used
+Secretion
+Secretion is down
+Secretion ready
+Secretion used
+Seigan
+Seigan is down
+Seigan ready
+Seigan used
+Seiryu up
+Seiryu window open
+Sekkanoki
+Sekkanoki is down
+Sekkanoki ready
+Sekkanoki used
+Sengikori
+Sengikori is down
+Sengikori ready
+Sengikori used
+Sensilla Blades
+Sensilla Blades is down
+Sensilla Blades ready
+Sensilla Blades used
+Sentinel
+Sentinel is down
+Sentinel ready
+Sentinel used
+Sepulcher
+Sepulcher is down
+Sepulcher ready
+Sepulcher used
+Serket up
+Serket window open
+Serpopard Ishtar up
+Serpopard Ishtar window open
+Serra up
+Serra window open
+Sewer Syrup up
+Sewer Syrup window open
+Seww The Squidlimbed up
+Seww The Squidlimbed window open
+Shadow Eye up
+Shadow Eye window open
+Shadowbind
+Shadowbind is down
+Shadowbind ready
+Shadowbind used
+Shakeshroom
+Shakeshroom is down
+Shakeshroom ready
+Shakeshroom used
+Sharp-Eared Ropipi up
+Sharp-Eared Ropipi window open
+Sharpshot
+Sharpshot is down
+Sharpshot ready
+Sharpshot used
+Sheep Charge
+Sheep Charge is down
+Sheep Charge ready
+Sheep Charge used
+Sheep Song
+Sheep Song is down
+Sheep Song ready
+Sheep Song used
+Shen up
+Shen window open
+Shield Bash
+Shield Bash is down
+Shield Bash ready
+Shield Bash used
+Shieldtrap up
+Shieldtrap window open
+Shii up
+Shii window open
+Shikigami Weapon up
+Shikigami Weapon window open
+Shikikoyo
+Shikikoyo is down
+Shikikoyo ready
+Shikikoyo used
+Shining Ruby
+Shining Ruby is down
+Shining Ruby ready
+Shining Ruby used
+Shock Squall
+Shock Squall is down
+Shock Squall ready
+Shock Squall used
+Shock Strike
+Shock Strike is down
+Shock Strike ready
+Shock Strike used
+Sic
+Sic is down
+Sic ready
+Sic used
+Sickle Slash
+Sickle Slash is down
+Sickle Slash ready
+Sickle Slash used
+Silence Gas
+Silence Gas is down
+Silence Gas ready
+Silence Gas used
+Silverhook up
+Silverhook window open
+Simurgh up
+Simurgh window open
+Skewer Sam up
+Skewer Sam window open
+Skull Of Envy up
+Skull Of Envy window open
+Skull Of Gluttony up
+Skull Of Gluttony window open
+Skull Of Greed up
+Skull Of Greed window open
+Skull Of Lust up
+Skull Of Lust window open
+Skull Of Pride up
+Skull Of Pride window open
+Skull Of Sloth up
+Skull Of Sloth window open
+Skull Of Wrath up
+Skull Of Wrath window open
+Sleepga
+Sleepga is down
+Sleepga ready
+Sleepga used
+Slowga
+Slowga is down
+Slowga ready
+Slowga used
+Smiting Breath
+Smiting Breath is down
+Smiting Breath ready
+Smiting Breath used
+Smothered Schmidt up
+Smothered Schmidt window open
+Snake Eye
+Snake Eye is down
+Snake Eye ready
+Snake Eye used
+Snarl
+Snarl is down
+Snarl ready
+Snarl used
+Sneak Attack
+Sneak Attack is down
+Sneak Attack ready
+Sneak Attack used
+Snow Cloud
+Snow Cloud is down
+Snow Cloud ready
+Snow Cloud used
+Snow Maiden up
+Snow Maiden window open
+Somersault
+Somersault is down
+Somersault ready
+Somersault used
+Somnolence
+Somnolence is down
+Somnolence ready
+Somnolence used
+Sonic Buffet
+Sonic Buffet is down
+Sonic Buffet ready
+Sonic Buffet used
+Soothing Current
+Soothing Current is down
+Soothing Current ready
+Soothing Current used
+Soothing Ruby
+Soothing Ruby is down
+Soothing Ruby ready
+Soothing Ruby used
+Soporific
+Soporific is down
+Soporific ready
+Soporific used
+Soul Enslavement
+Soul Enslavement is down
+Soul Enslavement ready
+Soul Enslavement used
+Soul Jump
+Soul Jump is down
+Soul Jump ready
+Soul Jump used
+Soul Voice
+Soul Voice is down
+Soul Voice ready
+Soul Voice used
+Souleater
+Souleater is down
+Souleater ready
+Souleater used
+Soulstealer Skullnix up
+Soulstealer Skullnix window open
+Southern Shadow up
+Southern Shadow window open
+Sozu Bliberry up
+Sozu Bliberry window open
+Sozu Rogberry up
+Sozu Rogberry window open
+Sozu Sarberry up
+Sozu Sarberry window open
+Sozu Terberry up
+Sozu Terberry window open
+Spectral Jig
+Spectral Jig is down
+Spectral Jig ready
+Spectral Jig used
+Spider Web
+Spider Web is down
+Spider Web ready
+Spider Web used
+Spinning Dive
+Spinning Dive is down
+Spinning Dive ready
+Spinning Dive used
+Spinning Top
+Spinning Top is down
+Spinning Top ready
+Spinning Top used
+Spiny Spipi up
+Spiny Spipi window open
+Spiral Spin
+Spiral Spin is down
+Spiral Spin ready
+Spiral Spin used
+Spirit Bond
+Spirit Bond is down
+Spirit Bond ready
+Spirit Bond used
+Spirit Jump
+Spirit Jump is down
+Spirit Jump ready
+Spirit Jump used
+Spirit Link
+Spirit Link is down
+Spirit Link ready
+Spirit Link used
+Spirit Surge
+Spirit Surge is down
+Spirit Surge ready
+Spirit Surge used
+Spoil
+Spoil is down
+Spoil ready
+Spoil used
+Spontaneity
+Spontaneity is down
+Spontaneity ready
+Spontaneity used
+Spore
+Spore is down
+Spore ready
+Spore used
+Spring Water
+Spring Water is down
+Spring Water ready
+Spring Water used
+Spur
+Spur is down
+Spur ready
+Spur used
+Stay
+Stay is down
+Stay ready
+Stay used
+Steady Wing
+Steady Wing is down
+Steady Wing ready
+Steady Wing used
+Steal
+Steal is down
+Steal ready
+Steal used
+Stealth Shot
+Stealth Shot is down
+Stealth Shot ready
+Stealth Shot used
+Steam Cleaner up
+Steam Cleaner window open
+Steelbiter Gudrud up
+Steelbiter Gudrud window open
+Steelfleece Baldarich up
+Steelfleece Baldarich window open
+Steps
+Steps is down
+Steps ready
+Steps used
+Stinging Sophie up
+Stinging Sophie window open
+Stink Bomb
+Stink Bomb is down
+Stink Bomb ready
+Stink Bomb used
+Stone Ii
+Stone Ii is down
+Stone Ii ready
+Stone Ii used
+Stone Iv
+Stone Iv is down
+Stone Iv ready
+Stone Iv used
+Stratagems
+Stratagems is down
+Stratagems ready
+Stratagems used
+Stray Mary up
+Stray Mary window open
+Striking Flourish
+Striking Flourish is down
+Striking Flourish ready
+Striking Flourish used
+Stubborn Dredvodd up
+Stubborn Dredvodd window open
+Stutter Step
+Stutter Step is down
+Stutter Step ready
+Stutter Step used
+Stymie
+Stymie is down
+Stymie ready
+Stymie used
+Sublimation
+Sublimation is down
+Sublimation ready
+Sublimation used
+Subtle Sorcery
+Subtle Sorcery is down
+Subtle Sorcery ready
+Subtle Sorcery used
+Suction
+Suction is down
+Suction ready
+Suction used
+Sudden Lunge
+Sudden Lunge is down
+Sudden Lunge ready
+Sudden Lunge used
+Sulpor
+Sulpor is down
+Sulpor ready
+Sulpor used
+Super Jump
+Super Jump is down
+Super Jump ready
+Super Jump used
+Suzaku up
+Suzaku window open
+Swamfisk up
+Swamfisk window open
+Swashstox Beadblinker up
+Swashstox Beadblinker window open
+Sweeping Gouge
+Sweeping Gouge is down
+Sweeping Gouge ready
+Sweeping Gouge used
+Swipe
+Swipe is down
+Swipe ready
+Swipe used
+Swooping Frenzy
+Swooping Frenzy is down
+Swooping Frenzy ready
+Swooping Frenzy used
+Swordplay
+Swordplay is down
+Swordplay ready
+Swordplay used
+TP Ready
+Tabula Rasa
+Tabula Rasa is down
+Tabula Rasa ready
+Tabula Rasa used
+Tactical Switch
+Tactical Switch is down
+Tactical Switch ready
+Tactical Switch used
+Tacticians Roll
+Tacticians Roll is down
+Tacticians Roll ready
+Tacticians Roll used
+Tail Blow
+Tail Blow is down
+Tail Blow ready
+Tail Blow used
+Tail Whip
+Tail Whip is down
+Tail Whip ready
+Tail Whip used
+Taisaijin up
+Taisaijin window open
+Tame
+Tame is down
+Tame ready
+Tame used
+Tarasque up
+Tarasque window open
+Tawny-Fingered Mugberry up
+Tawny-Fingered Mugberry window open
+Taxim up
+Taxim window open
+Tegmina Buffet
+Tegmina Buffet is down
+Tegmina Buffet ready
+Tegmina Buffet used
+Tellus
+Tellus is down
+Tellus ready
+Tellus used
+Tenebrae
+Tenebrae is down
+Tenebrae ready
+Tenebrae used
+Tenuto
+Tenuto is down
+Tenuto ready
+Tenuto used
+Ternary Flourish
+Ternary Flourish is down
+Ternary Flourish ready
+Ternary Flourish used
+Theurgic Focus
+Theurgic Focus is down
+Theurgic Focus ready
+Theurgic Focus used
+Third Eye
+Third Eye is down
+Third Eye ready
+Third Eye used
+Thousandarm Deshglesh up
+Thousandarm Deshglesh window open
+Thunder Ii
+Thunder Ii is down
+Thunder Ii ready
+Thunder Ii used
+Thunder Iv
+Thunder Iv is down
+Thunder Iv ready
+Thunder Iv used
+Thunder Maneuver
+Thunder Maneuver is down
+Thunder Maneuver ready
+Thunder Maneuver used
+Thunder Shot
+Thunder Shot is down
+Thunder Shot ready
+Thunder Shot used
+Thunderspark
+Thunderspark is down
+Thunderspark ready
+Thunderspark used
+Thunderstorm
+Thunderstorm is down
+Thunderstorm ready
+Thunderstorm used
+Tiamat up
+Tiamat window open
+Tickling Tendrils
+Tickling Tendrils is down
+Tickling Tendrils ready
+Tickling Tendrils used
+Tidal Roar
+Tidal Roar is down
+Tidal Roar ready
+Tidal Roar used
+Tidal Wave
+Tidal Wave is down
+Tidal Wave ready
+Tidal Wave used
+Tigerbane Bakdak up
+Tigerbane Bakdak window open
+Tom Tit Tat up
+Tom Tit Tat window open
+Tomahawk
+Tomahawk is down
+Tomahawk ready
+Tomahawk used
+Tonberry Decapitator up
+Tonberry Decapitator window open
+Tonberry Kinq up
+Tonberry Kinq window open
+Tonberry Tracker up
+Tonberry Tracker window open
+Tornado Ii
+Tornado Ii is down
+Tornado Ii ready
+Tornado Ii used
+Tortoise Stomp
+Tortoise Stomp is down
+Tortoise Stomp ready
+Tortoise Stomp used
+Tottering Toby up
+Tottering Toby window open
+Toxic Spit
+Toxic Spit is down
+Toxic Spit ready
+Toxic Spit used
+Tp Drainkiss
+Tp Drainkiss is down
+Tp Drainkiss ready
+Tp Drainkiss used
+Trance
+Trance is down
+Trance ready
+Trance used
+Tranquility
+Tranquility is down
+Tranquility ready
+Tranquility used
+Tres Duendes up
+Tres Duendes window open
+Triarius X-Xv up
+Triarius X-Xv window open
+Tribunus Vii-I up
+Tribunus Vii-I window open
+Trick Attack
+Trick Attack is down
+Trick Attack ready
+Trick Attack used
+Trickster Kinetix up
+Trickster Kinetix window open
+Triple Shot
+Triple Shot is down
+Triple Shot ready
+Triple Shot used
+Troubadour
+Troubadour is down
+Troubadour ready
+Troubadour used
+Tumbling Truffle up
+Tumbling Truffle window open
+Two maneuvers active
+Tyrannic Tunnok up
+Tyrannic Tunnok window open
+Tzee Xicu The Manifest up
+Tzee Xicu The Manifest window open
+Ullikummi up
+Ullikummi window open
+Ultimate Terror
+Ultimate Terror is down
+Ultimate Terror ready
+Ultimate Terror used
+Unbridled Learning
+Unbridled Learning is down
+Unbridled Learning ready
+Unbridled Learning used
+Unbridled Wisdom
+Unbridled Wisdom is down
+Unbridled Wisdom ready
+Unbridled Wisdom used
+Unda
+Unda is down
+Unda ready
+Unda used
+Ungur up
+Ungur window open
+Unleash
+Unleash is down
+Unleash ready
+Unleash used
+Unlimited Shot
+Unlimited Shot is down
+Unlimited Shot ready
+Unlimited Shot used
+Unstable Cluster up
+Unstable Cluster window open
+Unut up
+Unut window open
+Upyri up
+Upyri window open
+Utsusemi: Ni
+Utsusemi: Ni is down
+Utsusemi: Ni ready
+Valiance
+Valiance is down
+Valiance ready
+Valiance used
+Valkurm Emperor up
+Valkurm Emperor window open
+Vallation
+Vallation is down
+Vallation ready
+Vallation used
+Velocity Shot
+Velocity Shot is down
+Velocity Shot ready
+Velocity Shot used
+Venom
+Venom Shower
+Venom Shower is down
+Venom Shower ready
+Venom Shower used
+Venom Spray
+Venom Spray is down
+Venom Spray ready
+Venom Spray used
+Venom is down
+Venom ready
+Venom used
+Ventriloquy
+Ventriloquy is down
+Ventriloquy ready
+Ventriloquy used
+Violent Flourish
+Violent Flourish is down
+Violent Flourish ready
+Violent Flourish used
+Viscount Morax up
+Viscount Morax window open
+Vivacious Pulse
+Vivacious Pulse is down
+Vivacious Pulse ready
+Vivacious Pulse used
+Vodyanoi up
+Vodyanoi window open
+Voice ready
+Voll The Sharkfinned up
+Voll The Sharkfinned window open
+Volt Strike
+Volt Strike is down
+Volt Strike ready
+Volt Strike used
+Voluptuous Vivian up
+Voluptuous Vivian window open
+Vouivre up
+Vouivre window open
+Vrtra up
+Vrtra window open
+Vuu Puqu The Beguiler up
+Vuu Puqu The Beguiler window open
+Waltzes
+Waltzes is down
+Waltzes ready
+Waltzes used
+Waraxe Beak up
+Waraxe Beak window open
+Warcry
+Warcry is down
+Warcry ready
+Warcry used
+Ward
+Ward is down
+Ward ready
+Ward used
+Warding Circle
+Warding Circle is down
+Warding Circle ready
+Warding Circle used
+Warlocks Roll
+Warlocks Roll is down
+Warlocks Roll ready
+Warlocks Roll used
+Warriors Charge
+Warriors Charge is down
+Warriors Charge ready
+Warriors Charge used
+Water Ii
+Water Ii is down
+Water Ii ready
+Water Ii used
+Water Iv
+Water Iv is down
+Water Iv ready
+Water Iv used
+Water Maneuver
+Water Maneuver is down
+Water Maneuver ready
+Water Maneuver used
+Water Shot
+Water Shot is down
+Water Shot ready
+Water Shot used
+Water Wall
+Water Wall is down
+Water Wall ready
+Water Wall used
+Weapon Bash
+Weapon Bash is down
+Weapon Bash ready
+Weapon Bash used
+Weeping Willow up
+Weeping Willow window open
+Welt
+Welt is down
+Welt ready
+Welt used
+Western Shadow up
+Western Shadow window open
+Whirl Claws
+Whirl Claws is down
+Whirl Claws ready
+Whirl Claws used
+Whispering Wind
+Whispering Wind is down
+Whispering Wind ready
+Whispering Wind used
+White Coney up
+White Coney window open
+Widened Compass
+Widened Compass is down
+Widened Compass ready
+Widened Compass used
+Wild Card
+Wild Card is down
+Wild Card ready
+Wild Card used
+Wild Carrot
+Wild Carrot is down
+Wild Carrot ready
+Wild Carrot used
+Wild Flourish
+Wild Flourish is down
+Wild Flourish ready
+Wild Flourish used
+Wild Oats
+Wild Oats is down
+Wild Oats ready
+Wild Oats used
+Wind Blade
+Wind Blade is down
+Wind Blade ready
+Wind Blade used
+Wind Maneuver
+Wind Maneuver is down
+Wind Maneuver ready
+Wind Maneuver used
+Wind Shot
+Wind Shot is down
+Wind Shot ready
+Wind Shot used
+Window open
+Wing Slap
+Wing Slap is down
+Wing Slap ready
+Wing Slap used
+Wizards Roll
+Wizards Roll is down
+Wizards Roll ready
+Wizards Roll used
+Woodland Sage up
+Woodland Sage window open
+Worr The Clawfisted up
+Worr The Clawfisted window open
+Wounded Wurfel up
+Wounded Wurfel window open
+Wuur The Sandcomber up
+Wuur The Sandcomber window open
+Wyvernpoacher Drachlox up
+Wyvernpoacher Drachlox window open
+Xolotl up
+Xolotl window open
+Yaa Haqa The Profane up
+Yaa Haqa The Profane window open
+Yaegasumi
+Yaegasumi is down
+Yaegasumi ready
+Yaegasumi used
+Yagudo Avatar up
+Yagudo Avatar window open
+Yara Ma Yha Who up
+Yara Ma Yha Who window open
+Yonin
+Yonin is down
+Yonin ready
+Yonin used
+Yowie up
+Yowie window open
+Zantetsuken
+Zantetsuken is down
+Zantetsuken ready
+Zantetsuken used
+Zealous Snort
+Zealous Snort is down
+Zealous Snort ready
+Zealous Snort used
+Zhuu Buxu The Silent up
+Zhuu Buxu The Silent window open
+Zikko up
+Zikko window open
+Zipacna up
+Zipacna window open
+Ziphius up
+Ziphius window open
+Zizzy Zillah up
+Zizzy Zillah window open
+Zoredonite up
+Zoredonite window open
+Zuug The Shoreleaper up
+Zuug The Shoreleaper window open

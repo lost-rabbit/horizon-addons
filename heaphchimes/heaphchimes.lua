@@ -5,7 +5,7 @@
 * minimum. When any cooldown finishes, a toast shows "<name> ready" for a
 * few seconds, and clears instantly when you use the ability. Use
 * /cdchime mute <name> for anything too chatty. Popups only; spoken alerts
-* are optional and go through the bundled TTS helper (CdchimeVoice.bat).
+* are optional and play from voice clips that ship with the addon.
 *
 * Spells are opt-in (Utsusemi: Ni by default) since most spell recasts are
 * too short/frequent to be useful AL.alerts.
@@ -385,31 +385,78 @@ local muted = T{};          -- [lowercase name] = true
 local spellWatch = T{};     -- [spellId] = { name, prev, popup, popupAt }
 local next_poll = 0;
 
--- Speak a phrase: append it to the queue file the neural-voice daemon
--- (tts_daemon.py, launched by CdchimeVoice.bat) tails and reads aloud.
+-- Speak a phrase from the clips that ship with the addon (voice\<slug>.mp3,
+-- recorded once in the Yan voice). Playback is the Windows MCI call in
+-- winmm.dll, the same library other approved overlays use for sounds. Nothing
+-- runs outside the game and nothing is written or sent anywhere.
 -- Per-phrase debounce so render-loop calls don't machine-gun the voice.
 -- MUST be defined above every handler that calls it (Lua upvalue capture).
 local lastSpoken = T{};
-local speakQueue = ('%sconfig\\cdchime_speech.txt'):fmt(AshitaCore:GetInstallPath());
-local SPEECH_CAP = 512 * 1024;   -- the queue is append-only; start it over before it grows silly
-local function SpeakRaw(line)
-    local sz = io.open(speakQueue, 'rb');
-    if (sz ~= nil) then
-        local n = sz:seek('end') or 0; sz:close();
-        if (n > SPEECH_CAP) then local w = io.open(speakQueue, 'w'); if (w ~= nil) then w:close(); end end
+local voiceDir = ('%s/voice/'):fmt(addon.path);
+pcall(ffi.cdef, [[ int mciSendStringA(const char* cmd, char* ret, unsigned int retLen, void* hwnd); ]]);
+local winmm = nil;
+pcall(function () winmm = ffi.load('winmm'); end);
+local mciRet = ffi.new('char[128]');
+local function Mci(cmd)
+    if (winmm == nil) then return nil; end
+    local rc = winmm.mciSendStringA(cmd, mciRet, 128, nil);
+    if (rc ~= 0) then return nil; end
+    return ffi.string(mciRet);
+end
+local clipQueue = T{};
+local clipOpen = false;      -- an alias is open on the device
+local clipAlias = 'heaphvoice';
+local function Slug(text)
+    return (text:lower():gsub('[^a-z0-9]+', '_'):gsub('^_+', ''):gsub('_+$', ''));
+end
+local function ClipPath(text)
+    local path = voiceDir .. Slug(text) .. '.mp3';
+    local f = io.open(path, 'rb');
+    if (f == nil) then return nil; end
+    f:close();
+    return path;
+end
+local function StopClip()
+    if (clipOpen) then Mci('close ' .. clipAlias); clipOpen = false; end
+end
+local function StartClip(path)
+    StopClip();
+    if (Mci(('open "%s" type mpegvideo alias %s'):fmt(path, clipAlias)) == nil) then return false; end
+    clipOpen = true;
+    Mci(('setaudio %s volume to %d'):fmt(clipAlias, math.floor(speakVol * 10)));
+    Mci('play ' .. clipAlias);
+    return true;
+end
+-- called every frame: move to the next queued clip once the current one ends
+local function PumpVoice()
+    if (clipOpen) then
+        local mode = Mci('status ' .. clipAlias .. ' mode');
+        if (mode == nil or mode == 'stopped') then StopClip(); else return; end
     end
-    local f = io.open(speakQueue, 'a');
-    if (f ~= nil) then
-        f:write(line .. '\n');
-        f:close();
-    end
+    if (#clipQueue == 0) then return; end
+    local path = table.remove(clipQueue, 1);
+    if (not StartClip(path)) then PumpVoice(); end
+end
+local function QueueClip(path)
+    if (#clipQueue >= 4) then table.remove(clipQueue, 1); end
+    clipQueue[#clipQueue + 1] = path;
 end
 local function Speak(text)
     if (not speakOn) or (text == nil) then return; end
     local now = os.clock();
     if (lastSpoken[text] ~= nil) and ((now - lastSpoken[text]) < 3.0) then return; end
     lastSpoken[text] = now;
-    SpeakRaw(text:gsub('[\r\n]', ' '));
+    text = text:gsub('[\r\n]', ' ');
+    local any = false;
+    -- "Fire Maneuver used, 14 percent" is two clips; most lines are one
+    for part in text:gmatch('[^,]+') do
+        local path = ClipPath(part:gsub('^%s+', ''):gsub('%s+$', ''));
+        if (path ~= nil) then QueueClip(path); any = true; end
+    end
+    if (not any) then
+        local chime = ClipPath('Reminder');
+        if (chime ~= nil) then QueueClip(chime); end
+    end
 end
 _G.cdchimeSpeak = Speak;   -- phtimer.lua speaks through this
 
@@ -425,7 +472,14 @@ local function AddSpell(name)
     return nil;
 end
 
+ashita.events.register('d3d_present', 'voice_pump_cb', function ()
+    PumpVoice();
+end);
+ashita.events.register('unload', 'voice_unload_cb', function ()
+    clipQueue = T{}; StopClip();
+end);
 ashita.events.register('load', 'load_cb', function ()
+    Speak('Voice ready');
     -- Berserk's clock is chat-anchored, so a reload forgets it. Assume the
     -- worst case (just expired, 2 min of recast left) rather than "ready":
     -- the per-tick re-anchor below corrects it the moment the buff is seen.
@@ -1355,7 +1409,7 @@ ashita.events.register('command', 'command_cb', function (e)
     if (args[2] == 'volume') and (tonumber(args[3]) ~= nil) then
         speakVol = math.max(0, math.min(100, tonumber(args[3])));
         print(('[cdchime] Speech volume %d.'):fmt(speakVol));
-        SpeakRaw(('!vol %d'):fmt(speakVol));  -- daemon confirms aloud
+        lastSpoken['Voice ready'] = nil; Speak('Voice ready');
         return;
     end
     if (args[2] == 'addspell') and (args[3] ~= nil) then
@@ -1402,7 +1456,7 @@ _G.cdchimeShare = {
     Volume = function () return speakVol; end,
     SetVolume = function (v)
         speakVol = math.max(0, math.min(100, math.floor(v)));
-        SpeakRaw(('!vol %d'):fmt(speakVol));
+        lastSpoken['Voice ready'] = nil; Speak('Voice ready');
     end,
     Toast = function (text)
         AL.toasts:append({ text = text, at = os.clock() });

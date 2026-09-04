@@ -24,21 +24,14 @@ Copy the addon folder into `Game\addons` so that, for example,
 Add the same line to `Game\scripts\default.txt` to load it every time. Folder
 names are lower case and must match the file inside them.
 
-## HeaphChimes' voice (optional)
+## HeaphChimes' voice
 
-HeaphChimes can read its reminders aloud. The addon itself only appends the
-phrase to `Game\config\cdchime_speech.txt`. A separate helper outside the game,
-`heaphchimes\tts_daemon.py`, reads that file and speaks each phrase through
-Microsoft's Edge text-to-speech voice, caching the audio next to the script so
-repeats play offline. To use it:
-
-1. Install Python 3 from python.org.
-2. `pip install edge-tts`
-3. Run `heaphchimes\CdchimeVoice.bat` alongside the game.
-
-Without the helper the addon works exactly the same and simply stays quiet.
-Only the phrase text (ability names, reminder text, NM names) ever leaves the
-machine, and only the first time each phrase is spoken.
+HeaphChimes can read its reminders aloud. Every phrase it can say is a small
+recorded clip in `heaphchimes\voice\`, played through the Windows sound call
+(winmm) from inside the addon. Nothing runs outside the game, nothing is
+written to disk, nothing touches the network. `/heaphchimes say off` silences
+it and `/heaphchimes volume N` sets the level. A reminder with no matching clip
+plays a short spoken "Reminder" instead.
 
 ## Rules
 
