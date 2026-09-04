@@ -4,12 +4,12 @@ Public source: https://github.com/lost-rabbit/horizon-addons
 
 Each section is written to be pasted into the Community Team ticket.
 
-## cdchime
+## HeaphChimes (folder `heaphchimes`)
 
-cdchime is a display and voice overlay. It registers d3d_present, text_in,
+HeaphChimes is a display and voice overlay. It registers d3d_present, text_in,
 command, load and unload only; there is no packet_in or packet_out handler and
 no AddOutgoingPacket anywhere. It contains exactly one QueueCommand reachable
-from a player action, in the command handler: `/cdchime plates` (a keybind)
+from a player action, in the command handler: `/heaphchimes plates` (a keybind)
 sends `/nameplate mode all` or `hidenpc`. No render-loop or chat-triggered path
 issues a command, packet or key.
 
@@ -30,6 +30,21 @@ Microsoft's Edge text-to-speech service, caching mp3s locally. Only the phrase
 text (ability and NM names, reminder text) is sent; no character, chat or log
 data. The addon itself makes no network calls.
 
+## HeaphTimers (folder `heaphtimers`)
+
+HeaphTimers is a display-only replacement for the stock timers addon: two
+transparent, draggable overlay panels. The Buffs panel shows one tile per
+active status effect using the game's own status icon with the remaining
+seconds beneath it, read from the client's status timer table so the countdown
+is exact rather than estimated from packets. The Recasts panel lists every
+ability and spell on cooldown as a bar or a compact tile. Sizes, thresholds,
+colours and sort order are set in a fixed-size scrolling window opened with
+`/heaphtimers`; positions are saved per character. An off-by-default option
+hides the game's native status-icon row using the same reversible patch as
+statustimers (Heals, GPL), restored on unload. It reads memory and resources
+only, sends no packets and queues no commands. It is the timers module of
+HeaphChimes packaged on its own; the two should not be loaded together.
+
 ## clamtrack
 
 clamtrack is a Bibiki Bay clamming tracker. It reads chat (text_in) and one
@@ -41,11 +56,11 @@ writes one file under `config\` (a per-dig CSV, `/clam log off` to stop); the
 raw debug capture is off by default. Settings are per character through the
 standard settings library.
 
-## gearscan
+## HeaphsGearScan (folder `heaphsgearscan`)
 
-gearscan is a one-shot manual inventory dump. `/gearscan` writes every
-container's item names, level, job flags and the client's own stat description
-to `config\gearscan_dump.txt` so gear sets can be planned outside the game. It
-registers only a command handler, reads inventory memory and the resource
-manager, and never issues a command, packet or network call. Nothing in game
-consumes the file.
+HeaphsGearScan is a one-shot manual inventory dump. `/heaphsgearscan` writes
+every container's item names, level, job flags and the client's own stat
+description to `config\gearscan_dump.txt` so gear sets can be planned outside
+the game. It registers only a command handler, reads inventory memory and the
+resource manager, and never issues a command, packet or network call. Nothing
+in game consumes the file.

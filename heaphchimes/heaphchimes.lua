@@ -23,7 +23,7 @@
 * bars") the recast bars. Settings: <char>\cdtheme.lua.
 --]]
 
-addon.name      = 'cdchime';
+addon.name      = 'heaphchimes';
 addon.author    = 'Heaph';   -- creation assisted by ADA
 addon.version   = '1.5';
 addon.desc      = 'Cooldown popups, maneuver tiles, buff/recast timers, RNG range tracker.';
@@ -1151,7 +1151,7 @@ end);
 
 ashita.events.register('command', 'command_cb', function (e)
     local args = e.command:args();
-    if (#args == 0 or args[1] ~= '/cdchime') then return; end
+    if (#args == 0 or (args[1] ~= '/heaphchimes' and args[1] ~= '/cdchime')) then return; end
     e.blocked = true;
 
     if (args[2] == 'config') or (args[2] == 'theme') then

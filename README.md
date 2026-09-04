@@ -1,45 +1,50 @@
 # Heaph's HorizonXI addons
 
-Three display-only Ashita v4 addons written for HorizonXI. None of them sends a
+Four display-only Ashita v4 addons written for HorizonXI. None of them sends a
 command, packet or keypress on its own; everything they do is draw on screen,
 keep timers, or write a file under `Game\config`.
 
 | Addon | What it is | Commands |
 |---|---|---|
-| [cdchime](cdchime/) | cooldown and reminder popups, buff tiles and recast bars, placeholder and NM window countdowns, optional spoken reminders | `/cdchime`, `/cdtimers`, `/nm`, `/ph` |
+| [HeaphChimes](heaphchimes/) | cooldown and reminder popups, maneuver tiles, buff tiles and recast bars, placeholder and NM window countdowns, optional spoken reminders | `/heaphchimes` (alias `/cdchime`), `/cdtimers`, `/nm`, `/ph` |
+| [HeaphTimers](heaphtimers/) | the buff tiles and recast bars from HeaphChimes as a standalone addon, for people who only want timers | `/heaphtimers` (alias `/cdtimers`) |
 | [clamtrack](clamtrack/) | Bibiki Bay clamming tracker with the real chance the next dig breaks the bucket | `/clam` |
-| [gearscan](gearscan/) | one-shot inventory dump to a text file, for planning gear sets outside the game | `/gearscan` |
+| [HeaphsGearScan](heaphsgearscan/) | one-shot inventory dump to a text file, for planning gear sets outside the game | `/heaphsgearscan` (alias `/gearscan`) |
+
+HeaphChimes already contains the timers, so load either HeaphChimes or
+HeaphTimers, not both.
 
 ## Install
 
 Copy the addon folder into `Game\addons` so that, for example,
-`Game\addons\cdchime\cdchime.lua` exists, then in game:
+`Game\addons\heaphchimes\heaphchimes.lua` exists, then in game:
 
-    /addon load cdchime
+    /addon load heaphchimes
 
-Add the same line to `Game\scripts\default.txt` to load it every time.
+Add the same line to `Game\scripts\default.txt` to load it every time. Folder
+names are lower case and must match the file inside them.
 
-## cdchime's voice (optional)
+## HeaphChimes' voice (optional)
 
-cdchime can read its reminders aloud. The addon itself only appends the phrase
-to `Game\config\cdchime_speech.txt`. A separate helper outside the game,
-`cdchime\tts_daemon.py`, reads that file and speaks each phrase through
+HeaphChimes can read its reminders aloud. The addon itself only appends the
+phrase to `Game\config\cdchime_speech.txt`. A separate helper outside the game,
+`heaphchimes\tts_daemon.py`, reads that file and speaks each phrase through
 Microsoft's Edge text-to-speech voice, caching the audio next to the script so
 repeats play offline. To use it:
 
 1. Install Python 3 from python.org.
 2. `pip install edge-tts`
-3. Run `cdchime\CdchimeVoice.bat` alongside the game.
+3. Run `heaphchimes\CdchimeVoice.bat` alongside the game.
 
-Without the helper, cdchime works exactly the same and simply stays quiet.
+Without the helper the addon works exactly the same and simply stays quiet.
 Only the phrase text (ability names, reminder text, NM names) ever leaves the
 machine, and only the first time each phrase is spoken.
 
 ## Rules
 
 Written to sit inside HorizonXI's addon rules: nothing acts without a player
-input. The one command any of them issues is `/cdchime plates`, which toggles
-enemy nameplates when the player presses the key it is bound to. Details for
-reviewers are in [TICKETS.md](TICKETS.md).
+input. The one command any of them issues is `/heaphchimes plates`, which
+toggles enemy nameplates when the player presses the key it is bound to.
+Details for reviewers are in [TICKETS.md](TICKETS.md).
 
 Creation assisted by ADA. X-32 keeps the ledger.

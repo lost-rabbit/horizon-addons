@@ -18,7 +18,7 @@
 * Creation assisted by ADA.
 --]]
 
-addon.name      = 'gearscan';
+addon.name      = 'heaphsgearscan';
 addon.author    = 'Heaph';
 addon.version   = '1.2';
 addon.desc      = 'Dumps all inventory containers, with level/jobs/stats.';
@@ -198,7 +198,7 @@ end
 
 ashita.events.register('command', 'command_cb', function (e)
     local args = e.command:args();
-    if (#args == 0 or args[1] ~= '/gearscan') then
+    if (#args == 0 or (args[1] ~= '/heaphsgearscan' and args[1] ~= '/gearscan')) then
         return;
     end
     e.blocked = true;

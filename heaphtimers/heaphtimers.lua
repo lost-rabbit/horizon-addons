@@ -1,36 +1,45 @@
 --[[
-* timers.lua - cdtimers, now a MODULE of cdchime (merged 2026-08-19).
-* The optional native status-row hide (NativeHide/NativeRestore) uses the
-* same signature and reversible two-byte patch as statustimers by Heals
-* (GPL), with credit; it is off by /cdtimers native and restored on unload.
-* Loaded by cdchime.lua via require('timers'); registers its own event
-* callbacks under distinct names. Commands stay /cdtimers ...
+* heaphtimers v1.1 - buff and recast timers for Ashita v4 (HorizonXI).
 *
-* (original header follows)
-* cdtimers v1.0 - buff and recast timers in the cdchime style.
+* Creation assisted by ADA.
 *
-* Replaces the stock 'timers' addon. Two chrome-less panels:
+* Replaces the stock 'timers' addon with two chrome-less panels:
 *
 *   BUFFS   - one tile per status effect on you: the game's own status icon
 *             with the seconds remaining burned in underneath. The expiry is
-*             read straight from the client (same memory read cdchime uses
-*             for maneuvers), so it is EXACT - the stock addon estimated
-*             durations from action packets and drifted or errored.
-*   RECASTS - one tile per ability/spell currently on cooldown: name on top,
-*             countdown underneath, optional depletion bar.
+*             read straight from the client's status timer table, so it is
+*             exact; the stock addon estimated durations from action packets
+*             and drifted.
+*   RECASTS - one row (or tile) per ability/spell currently on cooldown:
+*             name, countdown and a fill that grows as the cooldown elapses.
 *
 * Both panels are pure flow layout on a fully transparent window, digits with
 * an 8-way dark outline so they read over anything. Drag them anywhere while
 * unlocked; lock to freeze.
 *
-* Usage: /cdtimers            - open the config window
-*        /cdtimers lock|unlock
-*        /cdtimers buffs|recasts  - toggle a panel
-*        /cdtimers native       - toggle hiding the game's own status row
-*        /cdtimers reset        - restore default settings
-* Read-only memory/resource reads; informational only.
+* The optional native status-row hide (NativeHide/NativeRestore) uses the
+* same signature and reversible two-byte patch as statustimers by Heals
+* (GPL), with credit. It is OFF by default, toggled by /heaphtimers native,
+* and the original bytes are restored on unload.
+*
+* Usage: /heaphtimers              - open the config window
+*        /heaphtimers lock|unlock  - freeze / release the panels
+*        /heaphtimers buffs        - toggle the buffs panel
+*        /heaphtimers recasts      - toggle the recasts panel
+*        /heaphtimers native       - toggle hiding the game's own status row
+*        /heaphtimers reset        - restore default settings
+*        /heaphtimers help         - list commands
+*        /cdtimers ...             - accepted as an alias for all of the above
+*
+* Display only: read-only memory/resource reads, no packets, and the only
+* command it ever issues is opening its own config window.
 --]]
 
+addon.name      = 'heaphtimers';
+addon.author    = 'Heaph';
+addon.version   = '1.1';
+addon.desc      = 'Exact buff timers and recast countdowns as transparent overlay panels.';
+addon.link      = 'https://github.com/lost-rabbit/horizon-addons';
 
 require('common');
 local imgui    = require('imgui');
@@ -39,8 +48,10 @@ local d3d8     = require('d3d8');
 local ffi      = require('ffi');
 local d3d8_device = d3d8.get_device();
 
+local CHAT = '[heaphtimers]';
+
 ----------------------------------------------------------------------------
--- Settings
+-- Settings (config\addons\heaphtimers\<char>\settings.lua)
 ----------------------------------------------------------------------------
 local defaults = T{
     locked = false,
@@ -53,9 +64,9 @@ local defaults = T{
         per_row      = 12,          -- wrap after this many tiles
         vertical     = true,        -- stack tiles downward (per_row = per column)
         font_scale   = 1.6,         -- countdown digits
-        hide_maneuvers = true,      -- cdchime already draws 300..307
+        hide_maneuvers = false,     -- PUP maneuvers 300..307 (on if another addon draws them)
         hide_infinite  = true,      -- Signet-style no-expiry buffs
-        hide_native    = true,      -- suppress the game's own status-icon row
+        hide_native    = false,     -- suppress the game's own status-icon row (off for release)
         sort_soonest_first = true,
         warn_at      = 20,          -- seconds -> yellow
         crit_at      = 10,          -- seconds -> red
@@ -77,11 +88,10 @@ local defaults = T{
         bar_pad      = 6,           -- px text inset
         bar_round    = 3.0,
         bar_bg_alpha = 0.92,
-        -- Palette (user swatch 2026-08-18): deep indigo ground with a lighter
-        -- lavender lip along the top; the fill is the same hue, brighter.
-        -- Each is TOP colour and BOTTOM colour of a vertical gradient.
+        -- Default palette: flat dark navy ground, indigo/lavender fill that is
+        -- the same hue but brighter. Each pair is the TOP and BOTTOM colour of
+        -- a vertical gradient. All editable in the config window.
         palette      = 3,
-        -- v3 (user swatch #2): ground is a FLAT dark navy, no gradient lip.
         bar_bg_top   = T{ 0.12, 0.11, 0.27, 1.0 },
         bar_bg_bot   = T{ 0.12, 0.11, 0.27, 1.0 },
         bar_fill_top = T{ 0.55, 0.50, 0.85, 0.95 },
@@ -101,7 +111,7 @@ local defaults = T{
         max_tiles    = 24,
     },
 };
-local cfg = settings.load(defaults, 'cdtimers');
+local cfg = settings.load(defaults);
 -- A settings file saved before the indigo palette carries the old blue in
 -- bar_fill and no gradient keys. Upgrade it once; the user can recolour after.
 if (cfg.recasts ~= nil) and ((cfg.recasts.palette or 0) < 3) then
@@ -113,7 +123,7 @@ if (cfg.recasts ~= nil) and ((cfg.recasts.palette or 0) < 3) then
     cfg.recasts.bar_fill_top = T{ d.bar_fill_top[1], d.bar_fill_top[2], d.bar_fill_top[3], d.bar_fill_top[4] };
     cfg.recasts.bar_fill_bot = T{ d.bar_fill_bot[1], d.bar_fill_bot[2], d.bar_fill_bot[3], d.bar_fill_bot[4] };
     cfg.recasts.bar_border   = T{ d.bar_border[1], d.bar_border[2], d.bar_border[3], d.bar_border[4] };
-    settings.save('cdtimers');
+    settings.save();
 end
 
 ----------------------------------------------------------------------------
@@ -123,6 +133,7 @@ local OUTLINE = {
     { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 },
     { -1, -1 }, { 1, -1 }, { -1, 1 }, { 1, 1 },
 };
+-- Own text palette; no other addon is needed for these.
 local COL_TEXT   = { 1.0, 1.0, 1.0, 1.0 };
 local COL_WARN   = { 1.0, 0.90, 0.55, 1.0 };
 local COL_CRIT   = { 1.0, 0.55, 0.50, 1.0 };
@@ -131,8 +142,8 @@ local COL_SHADOW = { 0.0, 0.0, 0.0, 0.85 };
 local COL_BAR_BG = { 0.0, 0.0, 0.0, 0.55 };
 local COL_BAR    = { 0.55, 0.80, 1.0, 0.95 };
 
--- Client clock and buff expiry: identical to cdchime's ManeuverTimers, but
--- returned for every slot rather than only maneuvers.
+-- Client clock and buff expiry. The status timer table holds absolute Vana
+-- stamps; subtract the client's own clock to get seconds remaining.
 local VANA_BASE_STAMP  = 0x3C307D70;
 local INFINITE_DURATION = 0x7FFFFFFF;
 local utcPtr = ashita.memory.find(
@@ -205,12 +216,12 @@ local function StatusName(id)
 end
 
 --[[
-* NATIVE STATUS ROW. With this panel as the buff bar, the game's own row of
-* tiny icons at the top of the screen is redundant. Same technique as the
-* Horizon-approved 'statustimers' addon (Heals, GPL): NOP the two-byte
-* conditional jump that leads into the native status-icon draw, and put the
-* original bytes back on unload or when the option is turned off. Nothing
-* else in the client is touched.
+* NATIVE STATUS ROW (optional, off by default). With this panel as the buff
+* bar, the game's own row of tiny icons at the top of the screen is
+* redundant. Same technique as the 'statustimers' addon (Heals, GPL): NOP the
+* two-byte conditional jump that leads into the native status-icon draw, and
+* put the original bytes back on unload or when the option is turned off.
+* Nothing else in the client is touched.
 --]]
 local native = { ptr = { 0, 0 }, orig = { 0, 0 }, patched = false };
 local NATIVE_SIG = '75??55518B0D????????E8????????85C07F??8BDE';
@@ -220,7 +231,7 @@ local function NativeHide()
     native.ptr[1] = ashita.memory.find('FFXiMain.dll', 0, NATIVE_SIG, 0, 0);
     native.ptr[2] = ashita.memory.find('FFXiMain.dll', 0, NATIVE_SIG, 0, 1);
     if (native.ptr[1] == 0) or (native.ptr[2] == 0) or (native.ptr[1] == native.ptr[2]) then
-        print('[cdtimers] native status row: signature not found, leaving it alone');
+        print(CHAT .. ' native status row: signature not found, leaving it alone');
         return false;
     end
     native.orig[1] = ashita.memory.read_uint16(native.ptr[1]);
@@ -248,20 +259,29 @@ local function NativeRestore()
 end
 
 -- Keep the patch state in step with the setting every frame (cheap: two
--- boolean compares once patched).
+-- boolean compares once patched). If the signature is missing the hide is
+-- attempted once per switch-on, not every frame.
+local nativeTried = false;
 local function NativeSync()
     local want = cfg.buffs.enabled and cfg.buffs.hide_native;
-    if (want and not native.patched) then NativeHide();
-    elseif ((not want) and native.patched) then NativeRestore(); end
+    if (want and not native.patched) then
+        if (not nativeTried) then
+            nativeTried = true;
+            NativeHide();
+        end
+    elseif ((not want) and native.patched) then
+        NativeRestore();
+    end
+    if (not want) then nativeTried = false; end
 end
 
+-- Font scaling: this build has no SetWindowFontScale, so push the current
+-- font at a scaled size. Every PushScale is paired with a PopScale.
 local function PushScale(s)
-    if (imgui.SetWindowFontScale ~= nil) then imgui.SetWindowFontScale(s);
-    else imgui.PushFont(imgui.GetFont(), imgui.GetFontSize() * s); end
+    imgui.PushFont(imgui.GetFont(), imgui.GetFontSize() * s);
 end
 local function PopScale()
-    if (imgui.SetWindowFontScale ~= nil) then imgui.SetWindowFontScale(1.0);
-    else imgui.PopFont(); end
+    imgui.PopFont();
 end
 
 -- "47" under a minute, "4:59" above; ceil so a fresh 60s buff reads 60 and
@@ -320,7 +340,8 @@ local function FitName(name, w, scale)
 end
 
 -- Chrome-less window wrapper: transparent, no border, no padding; movable
--- only while unlocked. Position is remembered in settings.
+-- only while unlocked. Position is remembered in settings. AlwaysAutoResize
+-- is safe here because max_tiles bounds the panel.
 local BASE_FLAGS = bit.bor(ImGuiWindowFlags_NoTitleBar, ImGuiWindowFlags_NoScrollbar,
     ImGuiWindowFlags_AlwaysAutoResize, ImGuiWindowFlags_NoFocusOnAppearing,
     ImGuiWindowFlags_NoSavedSettings);
@@ -340,6 +361,8 @@ local function BeginPanel(name, pcfg)
     return open;
 end
 
+-- Always called after BeginPanel, whether or not Begin returned true, so the
+-- End and the pops balance the pushes on every path.
 local function EndPanel(pcfg)
     if (not cfg.locked) then
         local px, py = imgui.GetWindowPos();
@@ -347,7 +370,7 @@ local function EndPanel(pcfg)
             local nx, ny = math.floor(px), math.floor(py);
             if (nx ~= pcfg.x) or (ny ~= pcfg.y) then
                 pcfg.x, pcfg.y = nx, ny;
-                cfg._dirty = true;   -- flushed on lock / config close
+                cfg._dirty = true;   -- flushed on lock / config close / unload
             end
         end
     end
@@ -399,7 +422,7 @@ local spellNames   = {};   -- spell id -> name
 local spellTotal   = {};   -- spell id -> full recast in seconds (resource RecastDelay is 1/4 s)
 local seenMax      = {};   -- key -> longest observed seconds
 
-ashita.events.register('load', 'timers_load_cb', function ()
+ashita.events.register('load', 'load_cb', function ()
     local res = AshitaCore:GetResourceManager();
     for id = 0, 2048 do
         local a = res:GetAbilityById(id);
@@ -522,7 +545,7 @@ local function DrawBuffs()
         return a.id < b.id;
     end);
 
-    if (BeginPanel('cdtimers_buffs', p)) then
+    if (BeginPanel('heaphtimers_buffs', p)) then
         local sz = p.icon_size;
         local n = 0;
         for _, b in ipairs(rows) do
@@ -551,7 +574,7 @@ end
 -- One [Name          5:40] row: dark ground, a fill that grows left->right as
 -- the cooldown ELAPSES (full = ready), name inset left, time inset right.
 -- Rects go through the draw list; text goes through the cursor so it can use
--- the window font scale; a Dummy reserves the footprint so autoresize works.
+-- the pushed font scale; a Dummy reserves the footprint so autoresize works.
 -- Size factor for a row: 1.0 at/below grow_full_at seconds left, easing
 -- down to grow_min at/above grow_min_at. Smoothstep so the growth reads as
 -- a swell rather than a linear creep.
@@ -590,7 +613,7 @@ local function DrawBarRow(p, name, left, total)
         local fx = x + math.max(2, w * frac);
         dl:AddRectFilledMultiColor({ x, y }, { fx, y + h },
             U(ft), U(ft), U(fb), U(fb));
-        -- crisp lip on the fill's top edge, like the swatch
+        -- crisp lip on the fill's top edge
         dl:AddLine({ x, y + 0.5 }, { fx, y + 0.5 }, U({ ft[1] + 0.15, ft[2] + 0.15, ft[3] + 0.10, 1.0 }), 1.0);
     end
     dl:AddRect({ x, y }, { x + w, y + h }, U(bd), 0.0, 0, 1.0);
@@ -620,7 +643,7 @@ local function DrawRecasts()
         return a.key < b.key;
     end);
 
-    if (BeginPanel('cdtimers_recasts', p)) then
+    if (BeginPanel('heaphtimers_recasts', p)) then
         local w = p.tile_w;
         local n = 0;
         for _, r in ipairs(rows) do
@@ -630,19 +653,19 @@ local function DrawRecasts()
             if (p.style ~= 'tiles') then
                 DrawBarRow(p, r.name, r.left, r.total);
             else
-            imgui.BeginGroup();
-            OutlinedTextCentered(FitName(r.name, w, p.name_scale), COL_DIM, w, p.name_scale);
-            OutlinedTextCentered(FmtLeft(r.left), LeftColour(r.left, p.warn_at, p.crit_at), w, p.font_scale);
-            if (p.show_bar) and (r.total ~= nil) and (r.total > 0) then
-                local frac = math.max(0, math.min(1, r.left / r.total));
-                local x, y = imgui.GetCursorScreenPos();
-                local dl = imgui.GetWindowDrawList();
-                local h = 3;
-                dl:AddRectFilled({ x, y }, { x + w, y + h }, imgui.GetColorU32(COL_BAR_BG));
-                dl:AddRectFilled({ x, y }, { x + w * frac, y + h }, imgui.GetColorU32(COL_BAR));
-                imgui.Dummy({ w, h + 1 });   -- reserve the bar's footprint
-            end
-            imgui.EndGroup();
+                imgui.BeginGroup();
+                OutlinedTextCentered(FitName(r.name, w, p.name_scale), COL_DIM, w, p.name_scale);
+                OutlinedTextCentered(FmtLeft(r.left), LeftColour(r.left, p.warn_at, p.crit_at), w, p.font_scale);
+                if (p.show_bar) and (r.total ~= nil) and (r.total > 0) then
+                    local frac = math.max(0, math.min(1, r.left / r.total));
+                    local x, y = imgui.GetCursorScreenPos();
+                    local dl = imgui.GetWindowDrawList();
+                    local h = 3;
+                    dl:AddRectFilled({ x, y }, { x + w, y + h }, imgui.GetColorU32(COL_BAR_BG));
+                    dl:AddRectFilled({ x, y }, { x + w * frac, y + h }, imgui.GetColorU32(COL_BAR));
+                    imgui.Dummy({ w, h + 1 });   -- reserve the bar's footprint
+                end
+                imgui.EndGroup();
             end
         end
         FinishTiles(n, p);
@@ -673,13 +696,13 @@ local function DrawConfig()
     -- taller than a 1080p display, and an AlwaysAutoResize window taller
     -- than the screen crashes the client.
     imgui.SetNextWindowSize({ 400, 600 }, ImGuiCond_FirstUseEver);
-    if (imgui.Begin('cdtimers config', open, ImGuiWindowFlags_None)) then
+    if (imgui.Begin('heaphtimers config', open, ImGuiWindowFlags_None)) then
         Check('Lock panels (freeze position, click-through)', cfg, 'locked');
         imgui.SameLine();
-        if (imgui.Button('Save')) then settings.save('cdtimers'); cfg._dirty = false; end
+        if (imgui.Button('Save')) then settings.save(); cfg._dirty = false; end
         imgui.SameLine();
         if (imgui.Button('Reset defaults')) then
-            settings.reset('cdtimers'); cfg = settings.load(defaults, 'cdtimers'); cfg.show_config = true;
+            settings.reset(); cfg = settings.load(defaults); cfg.show_config = true;
         end
         imgui.Separator();
 
@@ -695,7 +718,7 @@ local function DrawConfig()
             SliderI('Red at (s)##b', b, 'crit_at', 1, 60);
             SliderI('Max tiles##b', b, 'max_tiles', 1, 32);
             Check("Hide the game's own status-icon row", b, 'hide_native');
-            Check('Hide maneuvers (cdchime draws them)', b, 'hide_maneuvers');
+            Check('Hide maneuvers (if another addon draws them)', b, 'hide_maneuvers');
             Check('Hide no-expiry buffs (Signet etc.)', b, 'hide_infinite');
             Check('Soonest first##b', b, 'sort_soonest_first');
         end
@@ -746,83 +769,96 @@ local function DrawConfig()
             Check('Soonest first##r', r, 'sort_soonest_first');
         end
         imgui.Separator();
-        if (imgui.Button('Popup colours & theme...')) then
-            -- Direct call into the sibling module; no command is queued.
-            local th = _G.cdchimeTheme;
-            if (th ~= nil) and (th.cfg ~= nil) then th.cfg.show_config = true; end
+        -- Optional integration: when cdchime is loaded alongside, offer a
+        -- shortcut to its theme window. Absent, this section simply does not
+        -- appear; nothing here is required.
+        local th = _G.cdchimeTheme;
+        if (th ~= nil) and (th.cfg ~= nil) then
+            if (imgui.Button('cdchime colours & theme...')) then
+                th.cfg.show_config = true;   -- direct table write, no command queued
+            end
+            imgui.SameLine();
+            imgui.TextColored(COL_DIM, 'toasts, nags, range, placeholders');
         end
-        imgui.SameLine();
-        imgui.TextColored(COL_DIM, 'toasts, nags, range, placeholders');
         imgui.TextColored(COL_DIM, 'Unlock, drag the panels where you want them, lock, Save.');
     end
     imgui.End();
     if (not open[1]) then
         cfg.show_config = false;
-        settings.save('cdtimers'); cfg._dirty = false;
+        settings.save(); cfg._dirty = false;
     end
 end
 
 ----------------------------------------------------------------------------
 -- Events
 ----------------------------------------------------------------------------
-ashita.events.register('d3d_present', 'timers_present_cb', function ()
+ashita.events.register('d3d_present', 'present_cb', function ()
     NativeSync();
     if (cfg.buffs.enabled)   then DrawBuffs();   end
     if (cfg.recasts.enabled) then DrawRecasts(); end
     DrawConfig();
 end);
 
-ashita.events.register('command', 'timers_command_cb', function (e)
+local function PrintHelp()
+    print(CHAT .. ' /heaphtimers [config|lock|unlock|buffs|recasts|native|reset|help]  (/cdtimers is an alias)');
+    print(CHAT .. '   config   open or close the config window (default with no argument)');
+    print(CHAT .. '   lock     freeze the panels in place and make them click-through');
+    print(CHAT .. '   unlock   let the panels be dragged');
+    print(CHAT .. '   buffs    toggle the buffs panel');
+    print(CHAT .. '   recasts  toggle the recasts panel');
+    print(CHAT .. '   native   toggle hiding the game\'s own status-icon row');
+    print(CHAT .. '   reset    restore default settings');
+end
+
+ashita.events.register('command', 'command_cb', function (e)
     local args = e.command:args();
-    if (#args == 0) or (args[1] ~= '/cdtimers') then return; end
+    if (#args == 0) then return; end
+    local cmd = args[1]:lower();
+    if (cmd ~= '/heaphtimers') and (cmd ~= '/cdtimers') then return; end
     e.blocked = true;
     local sub = args[2] and args[2]:lower() or nil;
     if (sub == nil) or (sub == 'config') then
         cfg.show_config = not cfg.show_config;
     elseif (sub == 'lock') then
-        cfg.locked = true; settings.save('cdtimers'); print('[cdtimers] locked');
+        cfg.locked = true; settings.save(); cfg._dirty = false; print(CHAT .. ' locked');
     elseif (sub == 'unlock') then
-        cfg.locked = false; print('[cdtimers] unlocked - drag the panels, then /cdtimers lock');
+        cfg.locked = false; print(CHAT .. ' unlocked - drag the panels, then /heaphtimers lock');
     elseif (sub == 'buffs') then
-        cfg.buffs.enabled = not cfg.buffs.enabled; settings.save('cdtimers');
-        print(('[cdtimers] buffs panel %s'):fmt(cfg.buffs.enabled and 'on' or 'off'));
+        cfg.buffs.enabled = not cfg.buffs.enabled; settings.save();
+        print((CHAT .. ' buffs panel %s'):fmt(cfg.buffs.enabled and 'on' or 'off'));
     elseif (sub == 'recasts') then
-        cfg.recasts.enabled = not cfg.recasts.enabled; settings.save('cdtimers');
-        print(('[cdtimers] recasts panel %s'):fmt(cfg.recasts.enabled and 'on' or 'off'));
+        cfg.recasts.enabled = not cfg.recasts.enabled; settings.save();
+        print((CHAT .. ' recasts panel %s'):fmt(cfg.recasts.enabled and 'on' or 'off'));
     elseif (sub == 'native') then
-        cfg.buffs.hide_native = not cfg.buffs.hide_native; settings.save('cdtimers');
-        print(('[cdtimers] native status row %s'):fmt(cfg.buffs.hide_native and 'hidden' or 'shown'));
+        cfg.buffs.hide_native = not cfg.buffs.hide_native; settings.save();
+        print((CHAT .. ' native status row %s'):fmt(cfg.buffs.hide_native and 'hidden' or 'shown'));
     elseif (sub == 'reset') then
-        settings.reset('cdtimers'); cfg = settings.load(defaults, 'cdtimers'); print('[cdtimers] settings reset');
+        settings.reset(); cfg = settings.load(defaults); print(CHAT .. ' settings reset');
     else
-        print('[cdtimers] /cdtimers [config|lock|unlock|buffs|recasts|native|reset]');
+        PrintHelp();
     end
 end);
 
--- Persist on unload so dragged positions survive even without an explicit save.
-ashita.events.register('unload', 'timers_unload_cb', function ()
+-- Persist on unload so dragged positions survive even without an explicit
+-- save, and always put the native status row back.
+ashita.events.register('unload', 'unload_cb', function ()
     NativeRestore();
-    if (cfg._dirty) then settings.save('cdtimers'); end
+    if (cfg._dirty) then settings.save(); end
 end);
 
 -- Settings lib may hand us a fresh table (e.g. character change).
-settings.register('cdtimers', 'timers_settings_update', function (s)
+settings.register('settings', 'settings_update', function (s)
     if (s ~= nil) then cfg = s; end
 end);
 
--- Shared handle for theme.lua's "Match timer bars to this palette" button.
--- It must mutate THIS live table and save through here: calling
--- settings.load(..., 'cdtimers') from another module would overwrite the
--- cached defaults for the alias (breaking Reset defaults) and hand us a
--- different table than the one being rendered.
+-- Optional shared handle for other addons (cdchime's theme window uses it to
+-- push a palette into the bar colours). Nothing in this addon depends on
+-- anyone reading it.
 _G.cdtimersShare = {
     cfg  = function () return cfg; end,
     save = function ()
-        settings.save('cdtimers');
+        settings.save();
         cfg._dirty = false;
     end,
-    -- Opened from the cdchime config window's "Timer panels" button.
     showConfig = function () cfg.show_config = true; end,
 };
-
-return { name = 'timers', version = '1.0' };
