@@ -285,6 +285,7 @@ local AL = {            -- ONE table: keeps present_cb under LuaJIT's 60-upvalue
     TOAST_SECS = 4,
     alerts = T{},          -- [key] = { text=, at=, id= }  id -> accent colour
     toasts = T{},          -- list of { text=, at=, id= }
+    timers = T{},          -- [key] = { name=, endsAt= }  /cdchime timer countdowns
     range = { on = false, lo = 0, hi = 0, untilAt = 0 },
 };
 
@@ -930,8 +931,19 @@ ashita.events.register('d3d_present', 'present_cb', function ()
             if ((now - t.at) <= AL.TOAST_SECS) then keep:append(t); end
         end
         AL.toasts = keep;
+        -- Countdowns from /cdchime timer: when one lands it becomes a sticky
+        -- alert for ten seconds and is read aloud (a name with no recorded
+        -- clip falls back to the Reminder chime).
+        for k, t in pairs(AL.timers) do
+            if (now >= t.endsAt) then
+                AL.timers[k] = nil;
+                AL.alerts['timer_' .. k] = { text = '!' .. t.name .. ' is up', at = now, hold = 10 };
+                Speak(t.name);
+            end
+        end
         local n = #AL.toasts;
         for _ in pairs(AL.alerts) do n = n + 1; end
+        for _ in pairs(AL.timers) do n = n + 1; end
         if (n > 0) and (theme.Enabled('cdchime_alerts')) then
             theme.Push('cdchime_alerts', pulse);
             if (imgui.Begin('cdchime_alerts', true, flags)) then
@@ -948,6 +960,20 @@ ashita.events.register('d3d_present', 'present_cb', function ()
                 table.sort(keys);
                 for _, k in ipairs(keys) do line(AL.alerts[k].text, AL.alerts[k].id); end
                 for _, t in ipairs(AL.toasts) do line(t.text, t.id); end
+                local live = T{};
+                for _, t in pairs(AL.timers) do live:append(t); end
+                table.sort(live, function (a, b) return a.endsAt < b.endsAt; end);
+                for _, t in ipairs(live) do
+                    local left = math.max(0, math.floor(t.endsAt - now));
+                    local txt;
+                    if (left >= 3600) then
+                        txt = ('%d:%02d:%02d  %s'):fmt(math.floor(left / 3600), math.floor(left / 60) % 60, left % 60, t.name);
+                    else
+                        txt = ('%d:%02d  %s'):fmt(math.floor(left / 60), left % 60, t.name);
+                    end
+                    if (left <= 10) then txt = '!' .. txt; end
+                    line(txt);
+                end
                 PopScale();
             end
             imgui.End();
@@ -1323,7 +1349,63 @@ ashita.events.register('command', 'command_cb', function (e)
         return;
     end
 
+    -- /cdchime timer 10m Dynamis entry   |  timer 1h30m Sky pop  |  timer 90s Ochiudo
+    -- /cdchime timer list | cancel <name> | clear
+    if (args[2] == 'timer') then
+        local sub = args[3] and args[3]:lower() or 'list';
+        if (sub == 'clear') then
+            AL.timers = T{};
+            print('[cdchime] Countdowns cleared.');
+            return;
+        end
+        if (sub == 'cancel') and (args[4] ~= nil) then
+            local name = table.concat(args, ' ', 4);
+            local key = name:lower();
+            if (AL.timers[key] ~= nil) then
+                AL.timers[key] = nil;
+                print(('[cdchime] Cancelled: %s'):fmt(name));
+            else
+                print(('[cdchime] No countdown called %s.'):fmt(name));
+            end
+            return;
+        end
+        if (sub == 'list') then
+            local any = false;
+            for _, t in pairs(AL.timers) do
+                any = true;
+                print(('[cdchime]   %s - %d s left'):fmt(t.name, math.max(0, math.floor(t.endsAt - os.clock()))));
+            end
+            if (not any) then print('[cdchime] No countdowns. /cdchime timer <duration> <name>  (10m, 1h30m, 90s, or plain minutes)'); end
+            return;
+        end
+        -- duration: 90s | 10m | 1h | 1h30m | 1h30m15s | bare number = minutes
+        local spec = sub;
+        local secs = 0;
+        if (spec:match('^%d+$')) then
+            secs = tonumber(spec) * 60;
+        else
+            local ok = false;
+            for num, unit in spec:gmatch('(%d+)([hms])') do
+                ok = true;
+                if (unit == 'h') then secs = secs + tonumber(num) * 3600;
+                elseif (unit == 'm') then secs = secs + tonumber(num) * 60;
+                else secs = secs + tonumber(num); end
+            end
+            if (not ok) then secs = 0; end
+        end
+        local name = (#args >= 4) and table.concat(args, ' ', 4) or nil;
+        if (secs <= 0) or (name == nil) then
+            print('[cdchime] Usage: /cdchime timer <duration> <name>   e.g. timer 10m Dynamis entry');
+            return;
+        end
+        AL.timers[name:lower()] = { name = name, endsAt = os.clock() + secs };
+        print(('[cdchime] Countdown: %s in %d min %d s. It pops in the Alerts window and is read aloud.'):fmt(
+            name, math.floor(secs / 60), secs % 60));
+        return;
+    end
+
     if (#args == 1) or (args[2] == 'list') then
+        print('[cdchime] /cdchime timer <10m|1h30m|90s> <name> - countdown, pops + spoken');
         print('[cdchime] /cdchime config    - colours, sizes, per-window on/off');
         print('[cdchime] /cdchime layout    - drag the windows into place');
         print('[cdchime] /cdtimers config   - buff tiles and recast bars');

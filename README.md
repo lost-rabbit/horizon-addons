@@ -6,7 +6,7 @@ keep timers, or write a file under `Game\config`.
 
 | Addon | What it is | Commands |
 |---|---|---|
-| [HeaphChimes](heaphchimes/) | cooldown and reminder popups, maneuver tiles, buff tiles and recast bars, placeholder and NM window countdowns, optional spoken reminders | `/heaphchimes` (alias `/cdchime`), `/cdtimers`, `/nm`, `/ph` |
+| [HeaphChimes](heaphchimes/) | cooldown and reminder popups, maneuver tiles, buff tiles and recast bars, placeholder and NM window countdowns, plain countdowns (`/heaphchimes timer 10m Dynamis entry`), optional spoken reminders | `/heaphchimes` (alias `/cdchime`), `/cdtimers`, `/nm`, `/ph` |
 | [HeaphTimers](heaphtimers/) | the buff tiles and recast bars from HeaphChimes as a standalone addon, for people who only want timers | `/heaphtimers` (alias `/cdtimers`) |
 | [clamtrack](clamtrack/) | Bibiki Bay clamming tracker with the real chance the next dig breaks the bucket | `/clam` |
 | [HeaphsGearScan](heaphsgearscan/) | one-shot inventory dump to a text file, for planning gear sets outside the game | `/heaphsgearscan` (alias `/gearscan`) |
