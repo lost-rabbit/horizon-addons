@@ -39,7 +39,7 @@ local function Save() settings.save('jobnag'); end
 ----------------------------------------------------------------------------
 -- What each job should be keeping up. Levels are HORIZON levels.
 --   buffs  { buff name, ability that applies it, level, [alternative buff] }
---   ready  { ability, level, grace seconds, severity }
+--   ready  { ability, level, grace seconds, severity, [flash period] }
 ----------------------------------------------------------------------------
 local JOBS = {
     SAM = {
@@ -71,7 +71,8 @@ local JOBS = {
         -- left on the floor every half minute.
         -- No Counterstance rule: it is situational (defense drops), not upkeep.
         -- Focus is the accuracy buff: loud too, and silent while it is up.
-        ready = { { 'Boost', 5, 2, 'crit' }, { 'Focus', 15, 4, 'crit' },
+        -- fifth field = seconds between flashes (default NAG_PERIOD).
+        ready = { { 'Boost', 5, 2, 'crit', 5 }, { 'Focus', 15, 4, 'crit' },
                   { 'Chakra', 35, 10, 'text' } },
     },
     RNG = {
@@ -244,6 +245,7 @@ local function Nags()
     -- abilities sitting unused
     for _, a in ipairs(spec.ready or {}) do
         local name, minLvl, grace, sev = a[1], a[2], a[3] or cfg.grace, a[4] or 'text';
+        local period = a[5] or NAG_PERIOD;
         if (lvl >= minLvl) then
             local r = Recast(name);
             if (r ~= nil) and (r <= 0) and (not HasBuff(name)) then
@@ -252,9 +254,9 @@ local function Nags()
                 if (over >= 0) and (fighting >= grace) then
                     if (sev == 'crit') then
                         -- Berserk cadence: visible NAG_SHOW of every NAG_PERIOD
-                        if ((over % NAG_PERIOD) <= NAG_SHOW) then
+                        if ((over % period) <= NAG_SHOW) then
                             out[#out + 1] = { name:upper() .. ' Ready!', 'crit' };
-                            Speak(name, NAG_PERIOD - 1);
+                            Speak(name, period - 1);
                         end
                     else
                         out[#out + 1] = { name .. ' ready', sev };
