@@ -175,7 +175,9 @@ local function Job()
     local ok, j, lvl = pcall(function ()
         local p = AshitaCore:GetMemoryManager():GetPlayer();
         if (p == nil) then return nil, 0; end
-        local job = AshitaCore:GetResourceManager():GetString('jobs', p:GetMainJob());
+        -- The table is jobs.names_abbr (WAR, MNK, ...). Plain 'jobs' returns
+        -- nothing, which silently disabled every reminder until 2026-09-10.
+        local job = AshitaCore:GetResourceManager():GetString('jobs.names_abbr', p:GetMainJob());
         if (type(job) == 'string') then job = job:gsub('%z', ''); end
         return job, p:GetMainJobLevel();
     end);
