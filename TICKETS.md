@@ -23,10 +23,15 @@ The only client memory write is the same two-byte status-icon-row hide that the
 approved statustimers addon uses (same signature, credited, GPL). It is
 optional (`/cdtimers native`) and restored on unload.
 
-Spoken reminders are pre-recorded mp3 clips shipped in the addon's `voice`
-folder, played through winmm's MCI call from inside the addon (the same
-library other approved overlays use for sounds). The addon writes no files
-other than its own settings and makes no network calls.
+Spoken reminders are pre-recorded mp3 or wav clips shipped in the addon's
+`voice` folder, played through winmm's MCI call from inside the addon. The
+addon writes no files other than its own settings and makes no network calls.
+The `voice` folder also carries a PowerShell script a user can run by hand,
+outside the game, to record extra clips; the addon never launches it or
+anything else.
+
+Version 1.6 adds `/heaphchimes timer <duration> <name>`, a plain countdown
+drawn in the Alerts window that is read aloud when it lands. Display only.
 
 ## HeaphTimers (folder `heaphtimers`)
 

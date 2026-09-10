@@ -25,7 +25,7 @@
 
 addon.name      = 'heaphchimes';
 addon.author    = 'Heaph';   -- creation assisted by ADA
-addon.version   = '1.5';
+addon.version   = '1.6';
 addon.desc      = 'Cooldown popups, maneuver tiles, buff/recast timers, RNG range tracker.';
 
 require('common');
