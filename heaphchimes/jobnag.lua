@@ -72,7 +72,7 @@ local JOBS = {
         -- No Counterstance rule: it is situational (defense drops), not upkeep.
         -- Focus is the accuracy buff: loud too, and silent while it is up.
         ready = { { 'Boost', 5, 2, 'crit' }, { 'Focus', 15, 4, 'crit' },
-                  { 'Dodge', 25, 4, 'crit' }, { 'Chakra', 35, 10, 'text' } },
+                  { 'Chakra', 35, 10, 'text' } },
     },
     RNG = {
         ready = { { 'Sharpshot', 20, 8, 'warn' }, { 'Barrage', 30, 8, 'text' },
