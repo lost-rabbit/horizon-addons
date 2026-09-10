@@ -1,9 +1,12 @@
-# Make your own HeaphChimes voice lines.
+# Make your own HeaphChimes voice lines. Full guide: README.md in this folder.
 #
 #   .\make-voice-lines.ps1 "Dynamis entry" "Sky pop" "Go to bed"
 #   .\make-voice-lines.ps1 -FromFile mylines.txt          (one phrase per line)
 #   .\make-voice-lines.ps1 -Windows "Dynamis entry"       (skip Yan, use the Windows voice)
+#   .\make-voice-lines.ps1 -Windows -WindowsVoice Zira "Dynamis entry"
+#   .\make-voice-lines.ps1 -ListVoices                    (what Windows voices you have)
 #   .\make-voice-lines.ps1 -Python C:\path\to\python.exe "Dynamis entry"
+#   .\make-voice-lines.ps1 -Voice en-GB-SoniaNeural "Dynamis entry"
 #
 # Each phrase becomes one clip in this folder, named by the same rule the
 # addon uses to look clips up: lower case, every run of anything that is not
@@ -26,15 +29,31 @@ param(
     [string] $FromFile,
     [string] $Python,
     [switch] $Windows,
+    [string] $WindowsVoice,
+    [switch] $ListVoices,
     [string] $Voice = 'en-HK-YanNeural'
 )
 
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
+
+if ($ListVoices) {
+    Add-Type -AssemblyName System.Speech
+    $s = New-Object System.Speech.Synthesis.SpeechSynthesizer
+    "Windows voices on this PC (use with -Windows -WindowsVoice <name>):"
+    foreach ($v in $s.GetInstalledVoices()) {
+        $i = $v.VoiceInfo
+        "  {0,-32} {1,-8} {2}" -f $i.Name, $i.Gender, $i.Culture
+    }
+    $s.Dispose()
+    "More can be added under Windows Settings > Time & Language > Speech > Manage voices."
+    exit 0
+}
+
 $list = @()
 if ($FromFile) { $list += Get-Content $FromFile | Where-Object { $_.Trim() -ne '' -and -not $_.StartsWith('#') } }
 if ($Phrases) { $list += $Phrases }
 if (-not $list) {
-    Get-Content $MyInvocation.MyCommand.Path | Select-Object -First 22 | ForEach-Object { $_ -replace '^# ?', '' }
+    Get-Content $MyInvocation.MyCommand.Path | Select-Object -First 25 | ForEach-Object { $_ -replace '^# ?', '' }
     exit 2
 }
 
@@ -66,6 +85,15 @@ $sapi = $null
 if (-not $py) {
     Add-Type -AssemblyName System.Speech
     $sapi = New-Object System.Speech.Synthesis.SpeechSynthesizer
+    if ($WindowsVoice) {
+        $match = $sapi.GetInstalledVoices() | Where-Object { $_.VoiceInfo.Name -like "*$WindowsVoice*" } | Select-Object -First 1
+        if ($match) {
+            $sapi.SelectVoice($match.VoiceInfo.Name)
+        } else {
+            Write-Host "No Windows voice matching '$WindowsVoice'. Run -ListVoices to see them. Using the default."
+        }
+    }
+    Write-Host ("Recording with the Windows voice: " + $sapi.Voice.Name)
 }
 
 $made = 0
