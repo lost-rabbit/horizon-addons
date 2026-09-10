@@ -69,7 +69,7 @@ local JOBS = {
         -- Boost is the one that matters: red and spoken the moment it sits
         -- unused in a fight, because a 30 second recast you forget is DPS
         -- left on the floor every half minute.
-        buffs = { { 'Counterstance', 'Counterstance', 45 } },
+        -- No Counterstance rule: it is situational (defense drops), not upkeep.
         -- Focus is the accuracy buff: loud too, and silent while it is up.
         ready = { { 'Boost', 5, 2, 'crit' }, { 'Focus', 15, 4, 'crit' },
                   { 'Dodge', 25, 12, 'text' }, { 'Chakra', 35, 10, 'text' } },
