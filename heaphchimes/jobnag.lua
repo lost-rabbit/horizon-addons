@@ -32,7 +32,7 @@ local imgui = require('imgui');
 local chat = require('chat');
 local settings = require('settings');
 
-local defaults = T{ enabled = true, speak = false, grace = 6.0 };
+local defaults = T{ enabled = true, speak = true, grace = 6.0 };   -- on, and spoken, out of the box
 local cfg = settings.load(defaults, 'jobnag');
 local function Save() settings.save('jobnag'); end
 
