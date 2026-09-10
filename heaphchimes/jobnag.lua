@@ -65,9 +65,13 @@ local JOBS = {
                   { 'Mighty Strikes', 1, 30, 'text' } },
     },
     MNK = {
-        buffs = { { 'Counterstance', 'Counterstance', 20 } },
-        ready = { { 'Boost', 5, 3, 'warn' }, { 'Chakra', 35, 10, 'text' },
-                  { 'Focus', 25, 12, 'text' } },
+        -- Horizon levels: Focus 15, Dodge 25, Chakra 35, Counterstance 45.
+        -- Boost is the one that matters: red and spoken the moment it sits
+        -- unused in a fight, because a 30 second recast you forget is DPS
+        -- left on the floor every half minute.
+        buffs = { { 'Counterstance', 'Counterstance', 45 } },
+        ready = { { 'Boost', 5, 2, 'crit' }, { 'Focus', 15, 12, 'text' },
+                  { 'Dodge', 25, 12, 'text' }, { 'Chakra', 35, 10, 'text' } },
     },
     RNG = {
         ready = { { 'Sharpshot', 20, 8, 'warn' }, { 'Barrage', 30, 8, 'text' },
@@ -238,7 +242,7 @@ local function Nags()
                 if (readySince[name] == nil) then readySince[name] = os.clock(); end
                 if ((os.clock() - readySince[name]) >= grace) and (fighting >= grace) then
                     out[#out + 1] = { name .. ' ready', sev };
-                    if (sev == 'warn') then Speak(name); end
+                    if (sev == 'warn') or (sev == 'crit') then Speak(name); end
                 end
             else
                 readySince[name] = nil;
