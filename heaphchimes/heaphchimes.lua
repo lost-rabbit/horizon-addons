@@ -382,7 +382,9 @@ local tpReadyAt = 0;        -- when TP last crossed 1000
 
 local abilityNames = T{};   -- [recastTimerId] = ability name
 local tracked = T{};        -- [recastTimerId] = { prev, popup, popupAt }
-local muted = T{};          -- [lowercase name] = true
+-- Mutes live in the saved settings so they survive a reload. Boost is
+-- muted out of the box: a 30 second recast would nag every half minute.
+local muted = theme.cfg.muted;  -- [lowercase name] = true
 local spellWatch = T{};     -- [spellId] = { name, prev, popup, popupAt }
 local next_poll = 0;
 
@@ -1428,13 +1430,15 @@ ashita.events.register('command', 'command_cb', function (e)
     if (args[2] == 'mute') and (args[3] ~= nil) then
         local name = table.concat(args, ' ', 3);
         muted[string.lower(name)] = true;
-        print(('[cdchime] Muted: %s'):fmt(name));
+        theme.Save();
+        print(('[cdchime] Muted: %s (saved)'):fmt(name));
         return;
     end
     if (args[2] == 'unmute') and (args[3] ~= nil) then
         local name = table.concat(args, ' ', 3);
         muted[string.lower(name)] = nil;
-        print(('[cdchime] Unmuted: %s'):fmt(name));
+        theme.Save();
+        print(('[cdchime] Unmuted: %s (saved)'):fmt(name));
         return;
     end
     if (args[2] == 'plates') then
@@ -1526,6 +1530,7 @@ _G.cdchimeShare = {
     end,
     SetMute = function (name, on)
         muted[string.lower(name)] = on and true or nil;
+        theme.Save();
     end,
     Spells = function ()
         local out = T{};

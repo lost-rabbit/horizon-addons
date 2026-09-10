@@ -133,6 +133,7 @@ do
         if (c.petcast[k] == nil) then c.petcast[k] = v; end
     end
     if (c.triggers == nil) then c.triggers = T{ }; end
+    if (c.muted == nil) then c.muted = T{ ['boost'] = true }; end
     if (c.popups == nil) then c.popups = T{ }; end
     for id, d in pairs(defaults.popups) do
         local p = c.popups[id];
