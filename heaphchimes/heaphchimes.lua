@@ -479,6 +479,27 @@ local function AddSpell(name)
     return nil;
 end
 
+-- Pressing an ability or weaponskill key while it is still recasting makes
+-- the client print "Unable to use job ability." / "Unable to use weapon
+-- skill." Say so, so a dead key press is heard and not just missed in the
+-- chat log. Two second throttle so a mashed key does not stack clips.
+local notReadyAt = 0;
+ashita.events.register('text_in', 'notready_cb', function (e)
+    local msg = e.message;
+    if (msg == nil) then return; end
+    local now = os.clock();
+    if ((now - notReadyAt) < 2.0) then return; end
+    if (msg:find('^Unable to use job ability') or msg:find('^Unable to use ability')) then
+        notReadyAt = now;
+        lastSpoken['Not ready'] = nil;
+        Speak('Not ready');
+    elseif (msg:find('^Unable to use weapon skill')) then
+        notReadyAt = now;
+        lastSpoken['Weapon skill not ready'] = nil;
+        Speak('Weapon skill not ready');
+    end
+end);
+
 ashita.events.register('d3d_present', 'voice_pump_cb', function ()
     PumpVoice();
 end);

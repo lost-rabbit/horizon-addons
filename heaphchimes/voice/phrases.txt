@@ -3319,3 +3319,5 @@ Zuug The Shoreleaper window open
 Dynamis entry
 Sky pop
 Sallet window
+Not ready
+Weapon skill not ready
