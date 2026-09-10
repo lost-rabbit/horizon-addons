@@ -105,6 +105,7 @@ local defaults = T{
         cdchime_risk      = P('cdchime_risk',      'Overload risk',   1.00, 0.88, 0.40, 1.5),
         cdchime_maneuvers = P('cdchime_maneuvers', 'Maneuver tiles',  0.65, 0.85, 1.00, 2.0, true),
         cdchime_zerk      = P('cdchime_zerk',      'Berserk nag',     1.00, 0.60, 0.20, 2.0),
+        cdchime_jobnag    = P('cdchime_jobnag',    'Job reminders',   1.00, 0.60, 0.20, 2.0),
         cdchime_jump      = P('cdchime_jump',      'Jump nag',        1.00, 0.35, 0.30, 2.0),
         cdchime_mannag    = P('cdchime_mannag',    'Maneuver nag',    1.00, 0.70, 0.25, 2.0),
         cdchime_petnag    = P('cdchime_petnag',    'Pet nag',         0.80, 0.45, 1.00, 2.0),
@@ -372,7 +373,7 @@ end
 
 local ORDER = T{
     'cdchime_toast', 'cdchime_alerts', 'cdchime_risk', 'cdchime_maneuvers',
-    'cdchime_zerk', 'cdchime_jump', 'cdchime_mannag', 'cdchime_petnag',
+    'cdchime_zerk', 'cdchime_jobnag', 'cdchime_jump', 'cdchime_mannag', 'cdchime_petnag',
     'cdchime_buffnag', 'cdchime_tpnag', 'cdchime_petcast', 'cdchime_phtimer',
     'cdchime_nmwindow',
     'cdchime_groupa', 'cdchime_groupb',

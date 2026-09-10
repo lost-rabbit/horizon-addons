@@ -198,10 +198,15 @@ end
 ----------------------------------------------------------------------------
 local engagedSince, readySince, lastSpoke = 0, {}, {};
 
-local function Speak(msg)
+-- Loud reminders copy the Berserk window exactly: once the ability has sat
+-- ready past its grace, the line flashes up for NAG_SHOW seconds out of
+-- every NAG_PERIOD, pulsing border, spoken each time it shows.
+local NAG_PERIOD, NAG_SHOW = 7.0, 2.5;
+
+local function Speak(msg, gap)
     if (not cfg.speak) then return; end
     local now = os.clock();
-    if ((now - (lastSpoke[msg] or -99)) < 20) then return; end
+    if ((now - (lastSpoke[msg] or -99)) < (gap or 20)) then return; end
     lastSpoke[msg] = now;
     if (_G.cdchimeSpeak ~= nil) then pcall(_G.cdchimeSpeak, msg); end
 end
@@ -243,9 +248,18 @@ local function Nags()
             local r = Recast(name);
             if (r ~= nil) and (r <= 0) and (not HasBuff(name)) then
                 if (readySince[name] == nil) then readySince[name] = os.clock(); end
-                if ((os.clock() - readySince[name]) >= grace) and (fighting >= grace) then
-                    out[#out + 1] = { name .. ' ready', sev };
-                    if (sev == 'warn') or (sev == 'crit') then Speak(name); end
+                local over = os.clock() - readySince[name] - grace;
+                if (over >= 0) and (fighting >= grace) then
+                    if (sev == 'crit') then
+                        -- Berserk cadence: visible NAG_SHOW of every NAG_PERIOD
+                        if ((over % NAG_PERIOD) <= NAG_SHOW) then
+                            out[#out + 1] = { name:upper() .. ' Ready!', 'crit' };
+                            Speak(name, NAG_PERIOD - 1);
+                        end
+                    else
+                        out[#out + 1] = { name .. ' ready', sev };
+                        if (sev == 'warn') then Speak(name); end
+                    end
                 end
             else
                 readySince[name] = nil;
@@ -316,8 +330,9 @@ ashita.events.register('d3d_present', 'jobnag_present_cb', function ()
 
     local flags = bit.bor(ImGuiWindowFlags_NoTitleBar, ImGuiWindowFlags_NoScrollbar,
         ImGuiWindowFlags_AlwaysAutoResize, ImGuiWindowFlags_NoFocusOnAppearing);
+    local pulse = 0.45 + 0.55 * math.abs(math.sin(os.clock() * 4.0));
     if (th ~= nil) then
-        th.Push('cdchime_jobnag');
+        th.Push('cdchime_jobnag', pulse);
     else
         imgui.PushStyleVar(ImGuiStyleVar_WindowRounding, 8.0);
         imgui.PushStyleVar(ImGuiStyleVar_WindowBorderSize, 2.0);
