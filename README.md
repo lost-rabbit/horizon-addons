@@ -33,6 +33,11 @@ written to disk, nothing touches the network. `/heaphchimes say off` silences
 it and `/heaphchimes volume N` sets the level. A reminder with no matching clip
 plays a short spoken "Reminder" instead.
 
+Make your own lines with `heaphchimesoice\make-voice-lines.ps1 "Dynamis entry"`:
+it records in the same voice when Python with edge-tts is present and falls
+back to the Windows built-in voice otherwise. The addon plays mp3 or wav.
+Details in [heaphchimes/voice/README.md](heaphchimes/voice/README.md).
+
 ## Rules
 
 Written to sit inside HorizonXI's addon rules: nothing acts without a player

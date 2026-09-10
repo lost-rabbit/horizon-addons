@@ -410,19 +410,23 @@ local clipAlias = 'heaphvoice';
 local function Slug(text)
     return (text:lower():gsub('[^a-z0-9]+', '_'):gsub('^_+', ''):gsub('_+$', ''));
 end
+-- mp3 first (the shipped set), then wav (what the Windows-voice fallback in
+-- voice\make-voice-lines.ps1 writes).
 local function ClipPath(text)
-    local path = voiceDir .. Slug(text) .. '.mp3';
-    local f = io.open(path, 'rb');
-    if (f == nil) then return nil; end
-    f:close();
-    return path;
+    local base = voiceDir .. Slug(text);
+    for _, ext in ipairs({ '.mp3', '.wav' }) do
+        local f = io.open(base .. ext, 'rb');
+        if (f ~= nil) then f:close(); return base .. ext; end
+    end
+    return nil;
 end
 local function StopClip()
     if (clipOpen) then Mci('close ' .. clipAlias); clipOpen = false; end
 end
 local function StartClip(path)
     StopClip();
-    if (Mci(('open "%s" type mpegvideo alias %s'):fmt(path, clipAlias)) == nil) then return false; end
+    local kind = (path:sub(-4):lower() == '.wav') and 'waveaudio' or 'mpegvideo';
+    if (Mci(('open "%s" type %s alias %s'):fmt(path, kind, clipAlias)) == nil) then return false; end
     clipOpen = true;
     Mci(('setaudio %s volume to %d'):fmt(clipAlias, math.floor(speakVol * 10)));
     Mci('play ' .. clipAlias);
