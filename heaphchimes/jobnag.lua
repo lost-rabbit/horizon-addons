@@ -73,7 +73,7 @@ local JOBS = {
         -- Focus is the accuracy buff: loud too, and silent while it is up.
         -- fifth field = seconds between flashes (default NAG_PERIOD).
         ready = { { 'Boost', 5, 2, 'crit', 5 }, { 'Focus', 15, 4, 'crit' },
-                  { 'Chakra', 35, 10, 'text' } },
+                  { 'Chi Blast', 41, 4, 'crit' }, { 'Chakra', 35, 10, 'text' } },
     },
     RNG = {
         ready = { { 'Sharpshot', 20, 8, 'warn' }, { 'Barrage', 30, 8, 'text' },
