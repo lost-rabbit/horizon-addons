@@ -79,8 +79,8 @@ local JOBS = {
         -- Velocity Shot is the whole ranged job once you have it: red and
         -- spoken the moment it is down and ready, a countdown while it recasts.
         buffs = { { 'Velocity Shot', 'Velocity Shot', 45 } },
-        ready = { { 'Sharpshot', 20, 8, 'warn' }, { 'Barrage', 30, 8, 'text' },
-                  { 'Scavenge', 25, 30, 'text' } },
+        ready = { { 'Sharpshot', 20, 6, 'crit' }, { 'Barrage', 30, 6, 'crit' },
+                  { 'Scavenge', 25, 30, 'warn' } },
     },
     BST = {
         ready = { { 'Reward', 12, 6, 'warn' }, { 'Call Beast', 23, 20, 'text' } },
@@ -103,6 +103,14 @@ local JOBS = {
     },
 };
 
+-- Subjob rules: the same shape, gated on the SUBJOB level, added on top of
+-- the main job's list whenever that subjob is set. Only what matters from a
+-- support job; the main job's own list stays the loud one.
+local SUBS = {
+    SAM = { ready = { { 'Meditate', 30, 6, 'crit' }, { 'Third Eye', 15, 10, 'text' } } },
+    WAR = { ready = { { 'Warcry', 35, 10, 'text' } } },
+};
+
 ----------------------------------------------------------------------------
 -- Resource lookups, resolved once by NAME so a renumbering cannot break them
 ----------------------------------------------------------------------------
@@ -111,12 +119,14 @@ local timerIds, buffIds, resolved = {}, {}, false
 local function Resolve()
     local res = AshitaCore:GetResourceManager();
     local wantA, wantB = {}, {};
-    for _, spec in pairs(JOBS) do
-        for _, b in ipairs(spec.buffs or {}) do
-            wantB[b[1]] = true; wantA[b[2]] = true;
-            if (b[4]) then wantB[b[4]] = true; end
+    for _, table_ in ipairs({ JOBS, SUBS }) do
+        for _, spec in pairs(table_) do
+            for _, b in ipairs(spec.buffs or {}) do
+                wantB[b[1]] = true; wantA[b[2]] = true;
+                if (b[4]) then wantB[b[4]] = true; end
+            end
+            for _, r in ipairs(spec.ready or {}) do wantA[r[1]] = true; end
         end
-        for _, r in ipairs(spec.ready or {}) do wantA[r[1]] = true; end
     end
     for id = 0, 2048 do
         local ok, a = pcall(function () return res:GetAbilityById(id); end);
@@ -189,6 +199,18 @@ local function Job()
     return j, tonumber(lvl) or 0;
 end
 
+local function SubJob()
+    local ok, j, lvl = pcall(function ()
+        local p = AshitaCore:GetMemoryManager():GetPlayer();
+        if (p == nil) then return nil, 0; end
+        local job = AshitaCore:GetResourceManager():GetString('jobs.names_abbr', p:GetSubJob());
+        if (type(job) == 'string') then job = job:gsub('%z', ''); end
+        return job, p:GetSubJobLevel();
+    end);
+    if (not ok) or (j == nil) then return nil, 0; end
+    return j, tonumber(lvl) or 0;
+end
+
 local function Engaged()
     local ok, eng = pcall(function ()
         local ent = GetPlayerEntity();
@@ -220,6 +242,21 @@ local function Nags()
     local job, lvl = Job();
     if (job == nil) then return out, job, lvl; end
     local spec = JOBS[job];
+    -- fold in the subjob's rules, each gated on the subjob level (rewritten
+    -- to 0 so the main-level gate below lets them through)
+    local sub, subLvl = SubJob();
+    if (sub ~= nil) and (SUBS[sub] ~= nil) then
+        local merged = { buffs = {}, ready = {} };
+        for _, b in ipairs((spec and spec.buffs) or {}) do merged.buffs[#merged.buffs + 1] = b; end
+        for _, r in ipairs((spec and spec.ready) or {}) do merged.ready[#merged.ready + 1] = r; end
+        for _, b in ipairs(SUBS[sub].buffs or {}) do
+            if (subLvl >= b[3]) then merged.buffs[#merged.buffs + 1] = { b[1], b[2], 0, b[4] }; end
+        end
+        for _, r in ipairs(SUBS[sub].ready or {}) do
+            if (subLvl >= r[2]) then merged.ready[#merged.ready + 1] = { r[1], 0, r[3], r[4], r[5] }; end
+        end
+        spec = merged;
+    end
     if (spec == nil) then return out, job, lvl; end
 
     if (not Engaged()) then
