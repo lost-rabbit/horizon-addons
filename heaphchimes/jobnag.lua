@@ -107,7 +107,8 @@ local JOBS = {
 -- the main job's list whenever that subjob is set. Only what matters from a
 -- support job; the main job's own list stays the loud one.
 local SUBS = {
-    SAM = { ready = { { 'Meditate', 30, 6, 'crit' }, { 'Third Eye', 15, 10, 'text' } } },
+    SAM = { buffs = { { 'Hasso', 'Hasso', 25, 'Seigan' } },
+            ready = { { 'Meditate', 30, 6, 'crit' }, { 'Third Eye', 15, 10, 'text' } } },
     WAR = { ready = { { 'Warcry', 35, 10, 'text' } } },
 };
 
