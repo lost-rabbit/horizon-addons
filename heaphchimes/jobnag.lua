@@ -218,10 +218,23 @@ local function SubJob()
     return j, tonumber(lvl) or 0;
 end
 
+-- In a fight: the game's engaged status, or a live monster targeted within
+-- 30 yalms. The second half is for ranged jobs, which shoot without ever
+-- engaging and so never saw a reminder.
 local function Engaged()
     local ok, eng = pcall(function ()
         local ent = GetPlayerEntity();
-        return (ent ~= nil) and (ent.Status == 1);
+        if (ent ~= nil) and (ent.Status == 1) then return true; end
+        local tgt = AshitaCore:GetMemoryManager():GetTarget();
+        local em = AshitaCore:GetMemoryManager():GetEntity();
+        if (tgt == nil) or (em == nil) then return false; end
+        local ti = tgt:GetTargetIndex(0);
+        if (ti == nil) or (ti == 0) then return false; end
+        local flags = em:GetSpawnFlags(ti) or 0;
+        if (bit.band(flags, 0x10) == 0) then return false; end      -- not a monster
+        if ((em:GetHPPercent(ti) or 0) <= 0) then return false; end
+        local d2 = em:GetDistance(ti) or 0;
+        return (d2 > 0) and (d2 <= 900);
     end);
     return (ok and eng) or false;
 end
