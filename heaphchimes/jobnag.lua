@@ -76,6 +76,9 @@ local JOBS = {
                   { 'Chi Blast', 41, 4, 'crit' }, { 'Chakra', 35, 10, 'text' } },
     },
     RNG = {
+        -- Velocity Shot is the whole ranged job once you have it: red and
+        -- spoken the moment it is down and ready, a countdown while it recasts.
+        buffs = { { 'Velocity Shot', 'Velocity Shot', 45 } },
         ready = { { 'Sharpshot', 20, 8, 'warn' }, { 'Barrage', 30, 8, 'text' },
                   { 'Scavenge', 25, 30, 'text' } },
     },
