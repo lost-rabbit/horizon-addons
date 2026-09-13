@@ -39,12 +39,14 @@ local function Save() settings.save('jobnag'); end
 ----------------------------------------------------------------------------
 -- What each job should be keeping up. Levels are HORIZON levels.
 --   buffs  { buff name, ability that applies it, level, [alternative buff] }
+--   severity: text (quiet line), warn (spoken once), crit (red flash, Berserk
+--   cadence), hold (solid red the whole time it sits unused, spoken once a period)
 --   ready  { ability, level, grace seconds, severity, [flash period] }
 ----------------------------------------------------------------------------
 local JOBS = {
     SAM = {
         buffs = { { 'Hasso', 'Hasso', 25, 'Seigan' } },
-        ready = { { 'Meditate', 30, 6, 'warn' },
+        ready = { { 'Meditate', 30, 6, 'hold' },
                   { 'Third Eye', 15, 8, 'text' },
                   { 'Meikyo Shisui', 1, 25, 'text' } },
     },
@@ -79,7 +81,7 @@ local JOBS = {
         -- Velocity Shot is the whole ranged job once you have it: red and
         -- spoken the moment it is down and ready, a countdown while it recasts.
         buffs = { { 'Velocity Shot', 'Velocity Shot', 45 } },
-        ready = { { 'Sharpshot', 20, 6, 'crit' }, { 'Barrage', 30, 6, 'crit' },
+        ready = { { 'Sharpshot', 20, 6, 'hold' }, { 'Barrage', 30, 6, 'hold' },
                   { 'Scavenge', 25, 30, 'warn' } },
     },
     BST = {
@@ -108,7 +110,7 @@ local JOBS = {
 -- support job; the main job's own list stays the loud one.
 local SUBS = {
     SAM = { buffs = { { 'Hasso', 'Hasso', 25, 'Seigan' } },
-            ready = { { 'Meditate', 30, 6, 'crit' }, { 'Third Eye', 15, 10, 'text' } } },
+            ready = { { 'Meditate', 30, 6, 'hold' }, { 'Third Eye', 15, 10, 'text' } } },
     WAR = { ready = { { 'Warcry', 35, 10, 'text' } } },
 };
 
@@ -297,7 +299,12 @@ local function Nags()
                 if (readySince[name] == nil) then readySince[name] = os.clock(); end
                 local over = os.clock() - readySince[name] - grace;
                 if (over >= 0) and (fighting >= grace) then
-                    if (sev == 'crit') then
+                    if (sev == 'hold') then
+                        -- stays up, solid red, the whole time it sits unused;
+                        -- spoken once a period so it is not a wall of sound
+                        out[#out + 1] = { name:upper() .. ' Ready!', 'crit' };
+                        Speak(name, period - 1);
+                    elseif (sev == 'crit') then
                         -- Berserk cadence: visible NAG_SHOW of every NAG_PERIOD
                         if ((over % period) <= NAG_SHOW) then
                             out[#out + 1] = { name:upper() .. ' Ready!', 'crit' };
