@@ -136,11 +136,15 @@ local function Resolve()
             if (n ~= nil) and (wantA[n]) then timerIds[n] = a.RecastTimerId; end
         end
     end
-    for id = 0, 1024 do
-        local ok, st = pcall(function () return res:GetStatusIconByIndex(id); end);
-        if (ok) and (st ~= nil) and (st.Name ~= nil) then
-            local n = st.Name[1];
-            if (n ~= nil) and (wantB[n]) then buffIds[n] = id; end
+    -- Buff names live in the buffs.names string table, not on the status
+    -- icon object (that only carries the bitmap). Reading them off the icon
+    -- resolved nothing, so HasBuff() was always false and every buff
+    -- reminder fired on the recast alone, Hasso and Velocity Shot included.
+    for id = 0, 1023 do
+        local ok, n = pcall(function () return res:GetString('buffs.names', id); end);
+        if (ok) and (type(n) == 'string') then
+            n = n:gsub('%z', '');
+            if (wantB[n]) and (buffIds[n] == nil) then buffIds[n] = id; end
         end
     end
     resolved = true;
