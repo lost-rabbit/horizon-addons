@@ -272,12 +272,12 @@ local function Nags()
         local name, ability, minLvl, alt = b[1], b[2], b[3], b[4];
         if (lvl >= minLvl) and (fighting >= 4) then
             if (not HasBuff(name)) and ((alt == nil) or (not HasBuff(alt))) then
+                -- only when it can actually be put back up; recast countdowns
+                -- are the timers addon's job, not a nag
                 local r = Recast(ability);
                 if (r ~= nil) and (r <= 0) then
                     out[#out + 1] = { ability:upper() .. ' IS DOWN', 'crit' };
                     Speak(ability .. ' is down');
-                elseif (r ~= nil) then
-                    out[#out + 1] = { ('%s down - %ds'):fmt(ability, math.ceil(r)), 'warn' };
                 end
             end
         end
