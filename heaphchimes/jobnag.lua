@@ -78,11 +78,15 @@ local JOBS = {
                   { 'Chi Blast', 41, 4, 'crit' }, { 'Chakra', 35, 10, 'text' } },
     },
     RNG = {
-        -- Velocity Shot is the whole ranged job once you have it: red and
-        -- spoken the moment it is down and ready, a countdown while it recasts.
+        -- Velocity Shot is the whole ranged job once you have it: Ranged
+        -- Attack +15% for two hours off a five minute recast, so it should
+        -- never be down. Red and spoken the moment it drops.
         buffs = { { 'Velocity Shot', 'Velocity Shot', 45 } },
-        ready = { { 'Sharpshot', 20, 6, 'hold' }, { 'Barrage', 30, 6, 'hold' },
-                  { 'Scavenge', 25, 30, 'warn' } },
+        -- Unlock levels are Horizon's: Sharpshot 1, Barrage 30, Scavenge 10.
+        -- Scavenge is worth the nag here because Horizon uses the later
+        -- version that hands back spent ammunition.
+        ready = { { 'Sharpshot', 1, 6, 'hold' }, { 'Barrage', 30, 6, 'hold' },
+                  { 'Scavenge', 10, 30, 'warn' } },
     },
     BST = {
         ready = { { 'Reward', 12, 6, 'warn' }, { 'Call Beast', 23, 20, 'text' } },
