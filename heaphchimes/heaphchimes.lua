@@ -511,12 +511,20 @@ local QUIET_PATTERNS = {
     -- Ashita's own script feedback. A failing /exec prints both of these on
     -- every line it runs, which is how one keypress produced a dozen.
     { '^%.%.%.A command error occurred',            8.0 },
+    { '^>> ',                                      8.0 },   -- Ashita's command echo
 };
-local quietSeen = {};   -- [pattern] = os.clock() of the last one shown
+-- Keyed on the exact line, not just the pattern, so one message never
+-- silences a different one that happens to match the same rule.
+local quietSeen = {};   -- [line] = os.clock() of the last one shown
+local quietHeld = 0;    -- how many this session, for the status line
 
 ashita.events.register('text_in', 'heaph_quiet_cb', function (e)
     if (not quietOn) then return; end
-    local msg = e.message;
+    -- message_modified is the text that will actually be shown, after any
+    -- earlier handler has had it. e.message is the raw original and matching
+    -- on it silently did nothing (2026-09-16).
+    local msg = e.message_modified;
+    if (msg == nil) or (msg == '') then msg = e.message; end
     if (msg == nil) then return; end
     -- strip the game's colour/auto-translate bytes before matching
     -- %c is Lua's control-character class. A literal \x00 written into a
@@ -527,11 +535,12 @@ ashita.events.register('text_in', 'heaph_quiet_cb', function (e)
         local pat, window = row[1], row[2] * quietScale;
         if (plain:find(pat) ~= nil) then
             local now = os.clock();
-            local last = quietSeen[pat];
+            local last = quietSeen[plain];
             if (last ~= nil) and ((now - last) < window) then
-                e.blocked = true;      -- an exact repeat, inside its window
+                e.blocked = true;        -- the same line again, inside its window
+                quietHeld = quietHeld + 1;
             else
-                quietSeen[pat] = now;  -- first one through, let it print
+                quietSeen[plain] = now;  -- first one through, let it print
             end
             return;
         end
@@ -1338,8 +1347,8 @@ ashita.events.register('command', 'command_cb', function (e)
         end
         print(chat.header('heaphchimes'):append(chat.message(
             quietOn
-                and ('repeat filter ON: a repeated "not ready" line prints once, then waits (recast %.0fs, others %.0fs)'):fmt(30 * quietScale, 8 * quietScale)
-                or 'repeat filter off: every line prints')));
+                and ('repeat filter ON: a repeated line prints once, then waits (recast %.0fs, others %.0fs). Held back %d so far.'):fmt(30 * quietScale, 8 * quietScale, quietHeld)
+                or ('repeat filter off: every line prints. Held back %d before this.'):fmt(quietHeld))));
         return;
     end
 
