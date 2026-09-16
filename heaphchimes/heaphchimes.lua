@@ -482,6 +482,59 @@ end
 -- Pressing an ability or weaponskill key while it is still recasting makes
 -- the client print "Unable to use job ability." / "Unable to use weapon
 -- skill." Say so, so a dead key press is heard and not just missed in the
+----------------------------------------------------------------------------
+-- Repeat filter for the game's own "not ready" lines.
+--
+-- Tapping a key across a recast is normal play, and each attempt prints. The
+-- first one tells you something; the next twenty are noise. Each pattern
+-- below prints once, then stays quiet for quietWindow seconds.
+--
+-- Only ever hides a line that is an exact repeat of one just shown. Anything
+-- unrecognised passes straight through.
+----------------------------------------------------------------------------
+local quietOn = true;
+local quietScale = 1.0;      -- /heaphchimes quiet N multiplies every window
+-- { pattern, seconds }. The recast nag repeats in long ragged bursts and says
+-- nothing after the first one, so it is held much longer than the rest.
+local QUIET_PATTERNS = {
+    { '^You must wait longer',                    30.0 },
+    { '^Unable to use weapon skill',               8.0 },
+    { '^Unable to use job ability',                8.0 },
+    { '^Unable to use ability',                    8.0 },
+    { '^Unable to cast spells',                    8.0 },
+    { '^You cannot attack that target',            8.0 },
+    { '^You cannot see ',                          8.0 },
+    { '^Unable to see ',                           8.0 },
+    { '^You do not have enough TP',                8.0 },
+    { '^That action cannot be used in this area',  8.0 },
+    { '^You cannot use that command at this time', 8.0 },
+};
+local quietSeen = {};   -- [pattern] = os.clock() of the last one shown
+
+ashita.events.register('text_in', 'heaph_quiet_cb', function (e)
+    if (not quietOn) then return; end
+    local msg = e.message;
+    if (msg == nil) then return; end
+    -- strip the game's colour/auto-translate bytes before matching
+    -- %c is Lua's control-character class. A literal \x00 written into a
+    -- pattern ends the C string early and the match throws "malformed
+    -- pattern", so the class is spelled out this way instead.
+    local plain = msg:gsub('%c', ''):gsub('^%s+', '');
+    for _, row in ipairs(QUIET_PATTERNS) do
+        local pat, window = row[1], row[2] * quietScale;
+        if (plain:find(pat) ~= nil) then
+            local now = os.clock();
+            local last = quietSeen[pat];
+            if (last ~= nil) and ((now - last) < window) then
+                e.blocked = true;      -- an exact repeat, inside its window
+            else
+                quietSeen[pat] = now;  -- first one through, let it print
+            end
+            return;
+        end
+    end
+end);
+
 -- chat log. Two second throttle so a mashed key does not stack clips.
 local notReadyAt = 0;
 ashita.events.register('text_in', 'notready_cb', function (e)
@@ -1265,6 +1318,27 @@ ashita.events.register('command', 'command_cb', function (e)
     local args = e.command:args();
     if (#args == 0 or (args[1] ~= '/heaphchimes' and args[1] ~= '/cdchime')) then return; end
     e.blocked = true;
+
+    if (args[2] == 'quiet') then
+        if (args[3] == 'off') then
+            quietOn = false;
+        elseif (args[3] == 'on') then
+            quietOn = true;
+        elseif (args[3] ~= nil) then
+            local n = tonumber(args[3]);
+            if (n ~= nil) and (n >= 0) then
+                quietScale = n;        -- 0 shows everything, 2 holds twice as long
+                quietOn = (n > 0);
+            end
+        else
+            quietOn = not quietOn;
+        end
+        print(chat.header('heaphchimes'):append(chat.message(
+            quietOn
+                and ('repeat filter ON: a repeated "not ready" line prints once, then waits (recast %.0fs, others %.0fs)'):fmt(30 * quietScale, 8 * quietScale)
+                or 'repeat filter off: every line prints')));
+        return;
+    end
 
     if (args[2] == 'config') or (args[2] == 'theme') then
         local on = theme.ToggleConfig();
