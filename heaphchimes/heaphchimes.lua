@@ -516,7 +516,12 @@ ashita.events.register('load', 'load_cb', function ()
     for id = 0, 2048 do
         local a = res:GetAbilityById(id);
         if (a ~= nil) and (a.Name[1] ~= nil) and (a.RecastTimerId ~= nil) and (a.RecastTimerId ~= 0) then
-            abilityNames[a.RecastTimerId] = a.Name[1];
+            -- Several abilities can share one recast slot (Unlimited Shot and
+            -- the later Double Shot both sit on 126). The lower id is the one
+            -- from this era, so the first name to claim a slot keeps it.
+            if (abilityNames[a.RecastTimerId] == nil) then
+                abilityNames[a.RecastTimerId] = a.Name[1];
+            end
             if (a.Name[1]:find(' Maneuver') ~= nil) then
                 maneuverTimerId = a.RecastTimerId;
             end
