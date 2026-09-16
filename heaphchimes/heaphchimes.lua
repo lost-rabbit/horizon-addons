@@ -508,6 +508,9 @@ local QUIET_PATTERNS = {
     { '^You do not have enough TP',                8.0 },
     { '^That action cannot be used in this area',  8.0 },
     { '^You cannot use that command at this time', 8.0 },
+    -- Ashita's own script feedback. A failing /exec prints both of these on
+    -- every line it runs, which is how one keypress produced a dozen.
+    { '^%.%.%.A command error occurred',            8.0 },
 };
 local quietSeen = {};   -- [pattern] = os.clock() of the last one shown
 
