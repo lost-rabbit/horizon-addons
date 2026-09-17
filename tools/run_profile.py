@@ -26,18 +26,18 @@ local function tbl(t) return t or {} end
 
 gData = {
     GetPlayer = function()
-        return { MainJobLevel = LVL, MainJobSync = SYNC, SubJob = SUB, SubJobLevel = SUBLVL,
-                 Status = STATUS, HPP = 80, Name = 'Heaph' }
+        return { MainJob = MAINJOB, MainJobLevel = LVL, MainJobSync = SYNC, SubJob = SUB,
+                 SubJobLevel = SUBLVL, Status = STATUS, HPP = 80, Name = 'Heaph' }
     end,
     GetEquipment = function()
-        return { Range = { Name = 'Hellfire +1',
-                           Resource = { Delay = 640, Skill = 26 } } }
+        return { Range = { Name = 'Hellfire +1', Resource = { Delay = 640, Skill = 26 } },
+                 Main  = { Name = 'Bee Spatha +1', Resource = { Delay = 227, Skill = 3 } } }
     end,
     GetEnvironment = function() return { Time = 12.0, Area = 'Sauromugue Champaign' } end,
     GetAction        = function() return nil end,
     GetBuffCount     = function() return 0 end,
     GetTargetIndex   = function() return 0 end,
-    GetPet           = function() return nil end,
+    GetPet           = function() return PET end,
     GetPetAction     = function() return nil end,
     GetTarget        = function() return nil end,
     GetSpellCost     = function() return 0 end,
@@ -62,7 +62,9 @@ AshitaCore = {
                     GetSubJob = function() return 2 end,
                     GetMainJobLevel = function() return LVL end,
                     GetSubJobLevel = function() return SUBLVL end,
-                    GetCombatSkill = function() return { GetSkill = function() return 269 end } end,
+                    GetCombatSkill = function() return { GetSkill = function() return SKILL end } end,
+                    HasSpell       = function(_, id) return KNOWN[id] == true end,
+                    HasSpellData   = function() return true end,
                 }
             end,
             GetRecast = function()
@@ -106,12 +108,31 @@ GetPlayerEntity = function() return { Name = 'Heaph', Distance = 100 } end
 """
 
 
+RDM_KNOWN = [1, 2, 23, 33, 43, 48, 52, 56, 58, 59, 108, 159, 169, 154, 100 + 3, 104,
+             230, 220, 216]   # a Red Mage 18 with a few scrolls learned
+JOBCFG = {
+    '_':   {'lvl': 75, 'sub': 'SAM', 'sublvl': 37, 'skill': 269, 'known': [],
+            'subs': ('WAR', 'NIN', 'SAM', 'NON'), 'cmds': ('gear', 'recycle', 'loud', 'ws')},
+    'RDM': {'lvl': 18, 'sub': 'PUP', 'sublvl': 9, 'skill': 55, 'known': RDM_KNOWN,
+            'subs': ('PUP', 'BLM', 'NON', 'PUP'),
+            'cmds': ('gear', 'loud', 'ws', 'en', 'nuke', 'el next', 'el next', 'el earth',
+                     'el water', 'el bogus', 'gravity', 'blaze', 'resummon', 'resummon!')},
+}
+
+
 def run(job):
     L = lj.LuaRuntime()
     g = L.globals()
     g.INSTALL = os.path.join(os.environ['APPDATA'], 'HorizonXI-Launcher', 'HorizonXI', 'Game') + os.sep
     g.CMDS = L.table()
-    g.LVL, g.SYNC, g.SUB, g.SUBLVL, g.STATUS = 75, 0, 'SAM', 37, 'Idle'
+    cfg = JOBCFG.get(job, JOBCFG['_'])
+    g.MAINJOB, g.LVL, g.SYNC, g.SUB, g.SUBLVL, g.STATUS = job, cfg['lvl'], 0, cfg['sub'], cfg['sublvl'], 'Idle'
+    g.SKILL = cfg['skill']
+    g.PET = None
+    known = L.table()
+    for sid in cfg['known']:
+        known[sid] = True
+    g.KNOWN = known
     L.execute(STUBS)
 
     src = open(os.path.join(DIR, job + '.lua'), encoding='utf-8').read()
@@ -142,11 +163,12 @@ def run(job):
     call('HandleDefault')
     g.STATUS = 'Resting'
     call('HandleDefault')
-    for sub in ('WAR', 'NIN', 'SAM', 'NON'):
+    for sub in cfg['subs']:
         g.SUB = sub
         call('HandleDefault')
-    for cmd in ('gear', 'recycle', 'loud', 'ws'):
-        call('HandleCommand', L.table_from([cmd]))
+    g.SUB = cfg['sub']
+    for cmd in cfg['cmds']:
+        call('HandleCommand', L.table_from(cmd.split()))
     call('HandlePrecast'); call('HandleMidcast'); call('HandleAbility')
     call('HandlePreshot'); call('HandleMidshot'); call('HandleWeaponskill')
     call('OnUnload')
