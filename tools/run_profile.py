@@ -27,7 +27,8 @@ local function tbl(t) return t or {} end
 gData = {
     GetPlayer = function()
         return { MainJob = MAINJOB, MainJobLevel = LVL, MainJobSync = SYNC, SubJob = SUB,
-                 SubJobLevel = SUBLVL, Status = STATUS, HPP = 80, Name = 'Heaph' }
+                 SubJobLevel = SUBLVL, Status = STATUS, HPP = 80, Name = 'Heaph',
+                 MP = MPNOW or 300, MaxMP = MPMAX or 300 }
     end,
     GetEquipment = function()
         return { Range = { Name = 'Hellfire +1', Resource = { Delay = 640, Skill = 26 } },
@@ -110,7 +111,15 @@ GetPlayerEntity = function() return { Name = 'Heaph', Distance = 100 } end
 
 RDM_KNOWN = [1, 2, 23, 33, 43, 48, 52, 56, 58, 59, 108, 159, 169, 154, 100 + 3, 104,
              230, 220, 216]   # a Red Mage 18 with a few scrolls learned
+BLM_KNOWN = [159, 169, 154, 144, 149, 164, 160, 170, 189, 199, 184, 174,
+             220, 254, 258, 230, 245, 247, 253, 225, 263, 261, 264, 249, 250, 251,
+             239, 238, 237, 236, 235, 240, 1, 2]   # a Black Mage around 30
 JOBCFG = {
+    'BLM': {'lvl': 30, 'sub': 'RDM', 'sublvl': 15, 'skill': 80, 'known': BLM_KNOWN,
+            'subs': ('RDM', 'WHM', 'NIN', 'NON', 'RDM'),
+            'cmds': ('gear', 'loud', 'nuke', 'tier 1', 'tier 2', 'tier 4', 'ga 1', 'ga 3',
+                     'am', 'am2', 'dot', 'el next', 'el fire', 'el bogus', 'cast 1',
+                     'cast 7', 'cast 10', 'cast 15', 'cast 99', 'seal', 'sub', 'ws')},
     '_':   {'lvl': 75, 'sub': 'SAM', 'sublvl': 37, 'skill': 269, 'known': [],
             'subs': ('WAR', 'NIN', 'SAM', 'NON'), 'cmds': ('gear', 'recycle', 'loud', 'ws')},
     'RDM': {'lvl': 18, 'sub': 'PUP', 'sublvl': 9, 'skill': 55, 'known': RDM_KNOWN,
